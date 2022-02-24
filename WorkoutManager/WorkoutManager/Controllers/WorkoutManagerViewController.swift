@@ -33,8 +33,9 @@ class WorkoutManagerViewController: UIViewController {
             
             // Swift the state of the result
             switch result {
+                
             case .success(let workoutPlanData):
-                self?.workouts = workoutPlanData
+                // self?.workouts = workoutPlanData
                 
                 DispatchQueue.main.async {
                     self?.tableview.reloadData()
@@ -53,7 +54,7 @@ extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         guard let finalWorkouts = workouts else {
-            cell.textLabel?.text = "No results found"
+            cell.textLabel?.text = "No Workout Plans"
             return cell
         }
         
@@ -68,10 +69,5 @@ extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSour
             return 1
         }
          return finalWorkouts.workoutPlans.count
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
-
-}
 }

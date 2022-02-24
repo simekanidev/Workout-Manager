@@ -9,7 +9,6 @@ import UIKit
 
 class UserViewController: UIViewController {
     
-    // Creates an array of users that we can reference the data
     private var userUser: User?
     
     override func viewDidLoad() {
