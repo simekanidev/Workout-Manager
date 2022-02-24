@@ -13,7 +13,9 @@
 		0B4582AF27C7600E00E074C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4582A527C7600E00E074C6 /* Main.storyboard */; };
 		0B4582B027C7600E00E074C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582A827C7600E00E074C6 /* Constants.swift */; };
 		0B4582B127C7600E00E074C6 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582A927C7600E00E074C6 /* URLSession+Extension.swift */; };
-		0B4582B227C7600E00E074C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582AB27C7600E00E074C6 /* ViewController.swift */; };
+		0B4582B227C7600E00E074C6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582AB27C7600E00E074C6 /* UserViewController.swift */; };
+		0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582BA27C7812700E074C6 /* WorkoutManagerModel.swift */; };
+		0B4582BD27C782EE00E074C6 /* WorkoutManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */; };
 		0B6AE4A427C6783400186185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4A327C6783400186185 /* AppDelegate.swift */; };
 		0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4A527C6783400186185 /* SceneDelegate.swift */; };
 		0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */; };
@@ -45,7 +47,9 @@
 		0B4582A627C7600E00E074C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B4582A827C7600E00E074C6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0B4582A927C7600E00E074C6 /* URLSession+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		0B4582AB27C7600E00E074C6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B4582AB27C7600E00E074C6 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0B4582BA27C7812700E074C6 /* WorkoutManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerModel.swift; sourceTree = "<group>"; };
+		0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerViewController.swift; sourceTree = "<group>"; };
 		0B6AE4A027C6783400186185 /* WorkoutManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6AE4A327C6783400186185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6AE4A527C6783400186185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4582A127C7600E00E074C6 /* UserModel.swift */,
+				0B4582BA27C7812700E074C6 /* WorkoutManagerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,7 +124,8 @@
 		0B4582AA27C7600E00E074C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0B4582AB27C7600E00E074C6 /* ViewController.swift */,
+				0B4582AB27C7600E00E074C6 /* UserViewController.swift */,
+				0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,9 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B4582B027C7600E00E074C6 /* Constants.swift in Sources */,
+				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,
+				0B4582BD27C782EE00E074C6 /* WorkoutManagerViewController.swift in Sources */,
 				0B4582B127C7600E00E074C6 /* URLSession+Extension.swift in Sources */,
 				0B6AE4A427C6783400186185 /* AppDelegate.swift in Sources */,
-				0B4582B227C7600E00E074C6 /* ViewController.swift in Sources */,
+				0B4582B227C7600E00E074C6 /* UserViewController.swift in Sources */,
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */,
 			);

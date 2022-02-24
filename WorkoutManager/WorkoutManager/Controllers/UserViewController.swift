@@ -15,7 +15,7 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Calls the function that will execute get users api call
+        // Calls the function that will execute get user details api call
         getUserDetails()
     }
     
