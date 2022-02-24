@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserViewController: UIViewController {
     
     // Creates an array of users that we can reference the data
     private var userUser: User?
@@ -32,6 +32,5 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }})
-        
     }
 }
