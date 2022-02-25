@@ -16,8 +16,6 @@ class WorkoutManagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Get All Workout plans for us
-
         self.getWorkoutPlans()
             
         self.tableview.delegate = self
@@ -26,21 +24,16 @@ class WorkoutManagerViewController: UIViewController {
     }
     
     func getWorkoutPlans() {
-        
         let url = Constants.baseURL?.appendingPathComponent("workout/")
-        // Asks the url session to make a call to our custom function
         URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
-            
-            // Swift the state of the result
+        
             switch result {
                 
             case .success(let workoutPlanData):
-                // self?.workouts = workoutPlanData
-                
+                self?.workouts = workoutPlanData
                 DispatchQueue.main.async {
                     self?.tableview.reloadData()
                 }
-              
             case .failure(let error):
                 print(error)
             }})

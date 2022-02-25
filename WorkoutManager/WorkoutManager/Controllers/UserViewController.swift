@@ -9,23 +9,18 @@ import UIKit
 
 class UserViewController: UIViewController {
     
-    // Creates an array of users that we can reference the data
     private var userUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Calls the function that will execute get user details api call
         getUserDetails()
     }
     
-    // Function that will handle the logic for requesting the api call
     func getUserDetails() {
         let url = Constants.baseURL?.appendingPathComponent("userprofile/")
-        // Asks the url session to make a call to our custom function
         URLSession.shared.makeRequest(url: url,method: .get, returnModel:User.self, completion: {result in
             
-            // Swift the state of the result
             switch result {
             case .success(let userArray):
                 print(userArray)
