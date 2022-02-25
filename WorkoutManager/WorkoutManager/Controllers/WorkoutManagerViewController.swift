@@ -66,7 +66,7 @@ extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let finalWorkouts = self.workouts else {
-            return 1
+            return 0
         }
          return finalWorkouts.workoutPlans.count
     }
