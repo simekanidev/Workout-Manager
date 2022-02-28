@@ -18,22 +18,18 @@ class LoginViewController: UIViewController {
        
     }
 
-    @IBAction func enterTapped(_ sender: Any) {
+   @IBAction private func enterTapped(_ sender: Any) {
         
-        guard let password = passwordField.text  else {
-            return
-        }
-        
-        guard let username = userNameField.text  else {
+        guard let password = passwordField.text , let username = userNameField.text  else {
             return
         }
         
         if username == "Admin" && password == "TestPass123" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let viewController = storyboard.instantiateViewController(withIdentifier: "WorkoutManagerViewController") as? WorkoutManagerViewController {
-                
+            if let viewController = storyboard
+                .instantiateViewController(withIdentifier: "WorkoutManagerViewController") as?
+                WorkoutManagerViewController {
                 self.navigationController?.pushViewController(viewController, animated: false)
-                
             }
             
         }
