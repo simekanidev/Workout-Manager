@@ -7,9 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://user-images.githubusercontent.com/100220689/155962391-335439b2-e142-40e6-b874-cd862bd4b3e9.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  ![Splash Screen Logo](https://user-images.githubusercontent.com/100220689/155962391-335439b2-e142-40e6-b874-cd862bd4b3e9.png)
 </div>
 
 
