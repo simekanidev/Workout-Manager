@@ -1,9 +1,4 @@
-//
-//  UserModel.swift
-//  RestApiHelpers
-//
-//  Created by Lloyd Hendricks on 2022/02/09.
-//
+
 
 import Foundation
 

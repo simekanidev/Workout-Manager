@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  WorkoutManager
-//
-//  Created by Simekani Mabambi on 2022/02/23.
-//
 
 import UIKit
 
@@ -19,8 +13,8 @@ class UserViewController: UIViewController {
     
     func getUserDetails() {
         let url = Constants.baseURL?.appendingPathComponent("userprofile/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:User.self, completion: {result in
-            
+        URLSession.shared.makeRequest(url: url,method: .get, returnModel:User.self, completion:{[weak self]result in
+        
             switch result {
             case .success(let userArray):
                 print(userArray)
