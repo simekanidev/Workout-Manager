@@ -8,6 +8,10 @@
 <br />
 <div align="center">
   ![Splash Screen Logo](https://user-images.githubusercontent.com/100220689/155962391-335439b2-e142-40e6-b874-cd862bd4b3e9.png)
+  
+  <a>
+    <img src="https://user-images.githubusercontent.com/100220689/155962391-335439b2-e142-40e6-b874-cd862bd4b3e9.png" alt="Logo" width="150" height="80">
+  </a>
 </div>
 
 
