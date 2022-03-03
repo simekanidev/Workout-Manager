@@ -17,12 +17,11 @@ class LoginViewController: UIViewController {
         passwordField.delegate = self
        
     }
-
-   @IBAction private func enterTapped(_ sender: Any) {
+ 
+    @IBAction private func enterTapped(_ sender: Any) {
         
-        guard let password = passwordField.text , let username = userNameField.text  else {
-            return
-        }
+        guard let password = passwordField.text ,
+                let username = userNameField.text else { return }
         
         if username == "Admin" && password == "TestPass123" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
