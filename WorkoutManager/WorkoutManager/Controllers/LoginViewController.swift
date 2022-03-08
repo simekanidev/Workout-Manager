@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     }
  
     @IBAction private func enterTapped(_ sender: Any) {
-        
         guard let password = passwordField.text ,
                 let username = userNameField.text else { return }
         
@@ -29,7 +28,6 @@ class LoginViewController: UIViewController {
                 WorkoutManagerViewController {
                 self.navigationController?.pushViewController(viewController, animated: false)
             }
-            
         }
         
     }
