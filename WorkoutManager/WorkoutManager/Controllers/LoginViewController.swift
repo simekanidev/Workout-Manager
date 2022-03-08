@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         userNameField.delegate = self
         passwordField.delegate = self
-       
     }
  
     @IBAction private func enterTapped(_ sender: Any) {

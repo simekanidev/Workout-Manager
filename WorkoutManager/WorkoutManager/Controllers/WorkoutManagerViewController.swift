@@ -5,7 +5,7 @@ class WorkoutManagerViewController: UIViewController {
 
     private var workouts: WorkoutManager?
     
-    @IBOutlet var tableview:UITableView!
+    @IBOutlet private var tableview:UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
