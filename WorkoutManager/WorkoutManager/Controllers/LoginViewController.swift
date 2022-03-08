@@ -9,8 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var userNameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var userNameField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameField.delegate = self
