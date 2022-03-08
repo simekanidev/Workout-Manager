@@ -1,4 +1,3 @@
-
 import UIKit
 
 class UserViewController: UIViewController {
@@ -13,7 +12,7 @@ class UserViewController: UIViewController {
     
     func getUserDetails() {
         let url = Constants.baseURL?.appendingPathComponent("userprofile/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:User.self, completion:{[weak self]result in
+        URLSession.shared.makeRequest(url: url,method: .get, returnModel:User.self, completion: {[weak self]result in
         
             switch result {
             case .success(let userArray):

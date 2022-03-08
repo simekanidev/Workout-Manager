@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B066C0B27D786A20098D29A /* WorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */; };
+		0B066C0C27D786A20098D29A /* WorkoutsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */; };
 		0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45829F27C7600E00E074C6 /* Assets.xcassets */; };
 		0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582A127C7600E00E074C6 /* UserModel.swift */; };
 		0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4582A327C7600E00E074C6 /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0B45829F27C7600E00E074C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B4582A127C7600E00E074C6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B4582A427C7600E00E074C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			children = (
 				0B4582A327C7600E00E074C6 /* LaunchScreen.storyboard */,
 				0B4582A527C7600E00E074C6 /* Main.storyboard */,
+				0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */,
+				0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */,
 			);
 			path = UserInterfaces;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B066C0C27D786A20098D29A /* WorkoutsCollectionViewCell.xib in Resources */,
 				0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */,
 				0B4582AF27C7600E00E074C6 /* Main.storyboard in Resources */,
 				0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */,
@@ -346,6 +353,7 @@
 				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,
 				0B4582BD27C782EE00E074C6 /* WorkoutManagerViewController.swift in Sources */,
 				0B4582B127C7600E00E074C6 /* URLSession+Extension.swift in Sources */,
+				0B066C0B27D786A20098D29A /* WorkoutsCollectionViewCell.swift in Sources */,
 				0B6AE4A427C6783400186185 /* AppDelegate.swift in Sources */,
 				0B4582B227C7600E00E074C6 /* UserViewController.swift in Sources */,
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,

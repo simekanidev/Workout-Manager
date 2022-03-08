@@ -1,20 +1,20 @@
-
 import UIKit
 
 class WorkoutManagerViewController: UIViewController {
 
     private var workouts: WorkoutManager?
     
-    @IBOutlet var tableview:UITableView!
+    @IBOutlet private weak var workoutPlans: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.getWorkoutPlans()
-            
-        self.tableview.delegate = self
-        self.tableview.dataSource = self
-       
+        
+        workoutPlans.register(WorkoutsCollectionViewCell.nib(),
+                              forCellWithReuseIdentifier: WorkoutsCollectionViewCell.indetifier)
+        
+        self.workoutPlans.delegate = self
+        self.workoutPlans.dataSource = self
     }
     
     func getWorkoutPlans() {
@@ -26,7 +26,7 @@ class WorkoutManagerViewController: UIViewController {
             case .success(let workoutPlanData):
                 self?.workouts = workoutPlanData
                 DispatchQueue.main.async {
-                    self?.tableview.reloadData()
+                    self?.workoutPlans.reloadData()
                 }
             case .failure(let error):
                 print(error)
@@ -35,26 +35,50 @@ class WorkoutManagerViewController: UIViewController {
 
 }
 
-extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSource {
+extension WorkoutManagerViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        guard let finalWorkouts = self.workouts else {return 0}
+        
+        return finalWorkouts.workoutPlans.count
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable force_cast
+        let cell = workoutPlans.dequeueReusableCell(withReuseIdentifier: WorkoutsCollectionViewCell.indetifier, for: indexPath) as! WorkoutsCollectionViewCell
+        // swiftlint:enable force_cast
         guard let finalWorkouts = workouts else {
-            cell.textLabel?.text = "No Workout Plans"
             return cell
         }
         
-        cell.textLabel?.text = finalWorkouts.workoutPlans[indexPath.row].name
-    
+        cell.setCellAttributes(image: UIImage(named: "workout Image 2")!, status: "Active")
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let finalWorkouts = self.workouts else {
-            return 0
-        }
-         return finalWorkouts.workoutPlans.count
-    }
 }
+
+// extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//
+//        guard let finalWorkouts = workouts else {
+//            cell.textLabel?.text = "No Workout Plans"
+//            return cell
+//        }
+//
+//        cell.textLabel?.text = finalWorkouts.workoutPlans[indexPath.row].name
+//
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        guard let finalWorkouts = self.workouts else {
+//            return 0
+//        }
+//         return finalWorkouts.workoutPlans.count
+//    }
