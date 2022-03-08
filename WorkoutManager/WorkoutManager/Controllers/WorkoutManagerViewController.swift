@@ -1,11 +1,10 @@
-
 import UIKit
 
 class WorkoutManagerViewController: UIViewController {
 
     private var workouts: WorkoutManager?
     
-    @IBOutlet var tableview:UITableView!
+    @IBOutlet private var tableview:UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +18,8 @@ class WorkoutManagerViewController: UIViewController {
     
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
-        
+        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self] result in
+            
             switch result {
                 
             case .success(let workoutPlanData):
@@ -52,9 +51,8 @@ extension WorkoutManagerViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let finalWorkouts = self.workouts else {
-            return 0
-        }
+        guard let finalWorkouts = self.workouts else { return 0 }
+        
          return finalWorkouts.workoutPlans.count
     }
 }

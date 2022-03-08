@@ -21,6 +21,7 @@
 		0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */; };
 		0B6AE4C527C6783800186185 /* WorkoutManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */; };
 		0B6AE4C727C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */; };
+		0BDE3B5427CCB731001CF531 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE3B5327CCB731001CF531 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		0B6AE4C027C6783800186185 /* WorkoutManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITests.swift; sourceTree = "<group>"; };
 		0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BDE3B5327CCB731001CF531 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				0B4582AB27C7600E00E074C6 /* UserViewController.swift */,
 				0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */,
+				0BDE3B5327CCB731001CF531 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDE3B5427CCB731001CF531 /* LoginViewController.swift in Sources */,
 				0B4582B027C7600E00E074C6 /* Constants.swift in Sources */,
 				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,
 				0B4582BD27C782EE00E074C6 /* WorkoutManagerViewController.swift in Sources */,
