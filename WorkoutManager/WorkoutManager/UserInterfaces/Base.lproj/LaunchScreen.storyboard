@@ -15,6 +15,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< Updated upstream
+=======
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewLogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-gf-M0X">
+                                <rect key="frame" x="117.66666666666669" y="408" width="179" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5GD-Ck-jov"/>
+                                    <constraint firstAttribute="width" constant="179" id="aQk-SA-LES"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+>>>>>>> Stashed changes
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -25,8 +37,12 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< Updated upstream
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+=======
+        <image name="NewLogoOnly" width="232" height="134"/>
+>>>>>>> Stashed changes
     </resources>
 </document>
