@@ -33,6 +33,7 @@
             <size key="customSize" width="230" height="350"/>
             <connections>
                 <outlet property="image" destination="By2-FS-dea" id="6e6-gS-48m"/>
+                <outlet property="imageView" destination="By2-FS-dea" id="i2W-ES-BTm"/>
                 <outlet property="statusLabel" destination="Ufq-3z-gME" id="cQu-5r-5wO"/>
             </connections>
             <point key="canvasLocation" x="91.304347826086968" y="85.714285714285708"/>

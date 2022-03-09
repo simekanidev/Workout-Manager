@@ -53,7 +53,7 @@ extension WorkoutManagerViewController : UICollectionViewDataSource, UICollectio
             return cell
         }
         
-        cell.setCellAttributes(image: UIImage(named: "workout Image 2")!, status: "Active")
+        cell.setCellAttributes(image: UIImage(named: "NewLogo")!, status: "Active")
         
         return cell
     }
