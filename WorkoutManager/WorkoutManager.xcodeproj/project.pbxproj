@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B066C0B27D786A20098D29A /* WorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */; };
 		0B066C0C27D786A20098D29A /* WorkoutsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */; };
+		0B066C0E27D891100098D29A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0D27D891100098D29A /* ViewController.swift */; };
+		0B066C1127D8A12F0098D29A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0F27D8A12F0098D29A /* CollectionViewCell.swift */; };
+		0B066C1227D8A12F0098D29A /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B066C1027D8A12F0098D29A /* CollectionViewCell.xib */; };
 		0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45829F27C7600E00E074C6 /* Assets.xcassets */; };
 		0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582A127C7600E00E074C6 /* UserModel.swift */; };
 		0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4582A327C7600E00E074C6 /* LaunchScreen.storyboard */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutsCollectionViewCell.xib; sourceTree = "<group>"; };
+		0B066C0D27D891100098D29A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B066C0F27D8A12F0098D29A /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0B066C1027D8A12F0098D29A /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		0B45829F27C7600E00E074C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B4582A127C7600E00E074C6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B4582A427C7600E00E074C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 				0B4582A527C7600E00E074C6 /* Main.storyboard */,
 				0B066C0927D786A20098D29A /* WorkoutsCollectionViewCell.swift */,
 				0B066C0A27D786A20098D29A /* WorkoutsCollectionViewCell.xib */,
+				0B066C0F27D8A12F0098D29A /* CollectionViewCell.swift */,
+				0B066C1027D8A12F0098D29A /* CollectionViewCell.xib */,
 			);
 			path = UserInterfaces;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			children = (
 				0B4582AB27C7600E00E074C6 /* UserViewController.swift */,
 				0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */,
+				0B066C0D27D891100098D29A /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 				0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */,
 				0B4582AF27C7600E00E074C6 /* Main.storyboard in Resources */,
 				0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */,
+				0B066C1227D8A12F0098D29A /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B066C0E27D891100098D29A /* ViewController.swift in Sources */,
 				0B4582B027C7600E00E074C6 /* Constants.swift in Sources */,
 				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,
 				0B4582BD27C782EE00E074C6 /* WorkoutManagerViewController.swift in Sources */,
@@ -358,6 +369,7 @@
 				0B4582B227C7600E00E074C6 /* UserViewController.swift in Sources */,
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */,
+				0B066C1127D8A12F0098D29A /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

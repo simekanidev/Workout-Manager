@@ -1,0 +1,31 @@
+//
+//  CollectionViewCell.swift
+//  WorkoutManager
+//
+//  Created by Simekani Mabambi on 2022/03/09.
+//
+
+import UIKit
+
+class CollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
+    static let identifier = "CollectionViewCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    func setCellProperties(image: UIImage, label: String) {
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        statusLabel.text = label
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "CollectionViewCell", bundle: nil)
+    }
+
+}
