@@ -20,6 +20,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     func setCellProperties(image: UIImage, label: String) {
         imageView.image = image
+        self.imageView.layer.cornerRadius = 20
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.borderWidth = 7
+        self.imageView.layer.borderColor = UIColor(named: "Primary Colour")?.cgColor
         imageView.contentMode = .scaleAspectFill
         statusLabel.text = label
     }

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 230, height: 370)
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = CGFloat(45)
         return layout
     }
     

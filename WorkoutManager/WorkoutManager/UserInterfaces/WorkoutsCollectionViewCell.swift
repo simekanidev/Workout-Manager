@@ -20,6 +20,10 @@ class WorkoutsCollectionViewCell: UICollectionViewCell {
     
     public func setCellAttributes(image: UIImage, status: String) {
         self.imageView.image = image
+        self.imageView.layer.cornerRadius = 10
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.borderWidth = 20
+        self.imageView.layer.borderColor = UIColor(named: "Primary Colour")?.cgColor
         self.statusLabel.text = status
     }
     
