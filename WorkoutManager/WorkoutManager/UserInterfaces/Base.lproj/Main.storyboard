@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="71.651785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Workout Manager View Controller-->
         <scene sceneID="QB7-pL-kuH">
             <objects>
-                <viewController id="Bg1-Ff-4HZ" customClass="ViewController" customModule="WorkoutManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bg1-Ff-4HZ" customClass="WorkoutManagerViewController" customModule="WorkoutManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGn-oB-zMA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

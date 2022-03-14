@@ -1,6 +1,6 @@
 import Foundation
 
-struct User: Codable {
+struct UserModel: Codable {
 
     let results : [UserDetails]?
     struct UserDetails: Codable {

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
-    static let identifier = "CollectionViewCell"
+    static let identifier = "WorkoutPlanCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +29,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     static func nib() -> UINib {
-        return UINib(nibName: "CollectionViewCell", bundle: nil)
+        return UINib(nibName: "WorkoutPlanCollectionViewCell", bundle: nil)
     }
 
 }
