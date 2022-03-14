@@ -26,6 +26,7 @@
 		0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */; };
 		0B6AE4C527C6783800186185 /* WorkoutManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */; };
 		0B6AE4C727C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */; };
+		0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		0B6AE4C027C6783800186185 /* WorkoutManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITests.swift; sourceTree = "<group>"; };
 		0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				0B45829E27C7600E00E074C6 /* Resources */,
 				0B4582A227C7600E00E074C6 /* UserInterfaces */,
 				0B4582A727C7600E00E074C6 /* Utilities */,
+				0BD47C4B27DF0BC2006ABF5D /* LocalDatabse */,
 				0B6AE4B127C6783600186185 /* Info.plist */,
 			);
 			path = WorkoutManager;
@@ -203,6 +206,14 @@
 				0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */,
 			);
 			path = WorkoutManagerUITests;
+			sourceTree = "<group>";
+		};
+		0BD47C4B27DF0BC2006ABF5D /* LocalDatabse */ = {
+			isa = PBXGroup;
+			children = (
+				0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */,
+			);
+			path = LocalDatabse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */,
 				0B066C1127D8A12F0098D29A /* CollectionViewCell.swift in Sources */,
+				0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +719,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */,
+			);
+			currentVersion = 0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0B6AE49827C6783300186185 /* Project object */;
 }
