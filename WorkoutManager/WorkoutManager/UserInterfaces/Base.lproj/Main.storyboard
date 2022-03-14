@@ -63,12 +63,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts for Muscle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUO-1k-lHG">
-                                <rect key="frame" x="20" y="511" width="374" height="37"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJu-QC-M63">
                                 <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,47 +71,19 @@
                                     <tabBarItem systemItem="more" id="Pya-na-BHQ"/>
                                 </items>
                             </tabBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iXp-6Z-3nQ">
-                                <rect key="frame" x="30" y="567" width="354" height="212"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eud-eI-5h2">
-                                    <size key="itemSize" width="110" height="75"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VIC-ho-XX3">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qPl-B0-cw3">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="110" height="75"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6f8-zl-uFs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6f8-zl-uFs" firstAttribute="trailing" secondItem="32f-sQ-N2l" secondAttribute="trailing" constant="20" id="3Kd-p2-dwC"/>
-                            <constraint firstItem="BJu-QC-M63" firstAttribute="top" secondItem="iXp-6Z-3nQ" secondAttribute="bottom" id="4jW-mf-aWs"/>
                             <constraint firstItem="32f-sQ-N2l" firstAttribute="top" secondItem="6f8-zl-uFs" secondAttribute="top" constant="20" id="MJV-KV-cHF"/>
-                            <constraint firstItem="6f8-zl-uFs" firstAttribute="trailing" secondItem="iXp-6Z-3nQ" secondAttribute="trailing" constant="30" id="Mv8-gS-7Sx"/>
-                            <constraint firstItem="iXp-6Z-3nQ" firstAttribute="top" secondItem="sUO-1k-lHG" secondAttribute="bottom" constant="19" id="YWm-RQ-Rbx"/>
                             <constraint firstItem="6f8-zl-uFs" firstAttribute="trailing" secondItem="4eL-9a-Ri3" secondAttribute="trailing" constant="30" id="ZMg-Mx-aQm"/>
                             <constraint firstItem="4eL-9a-Ri3" firstAttribute="leading" secondItem="6f8-zl-uFs" secondAttribute="leading" constant="30" id="bg1-pG-5Ro"/>
                             <constraint firstItem="BJu-QC-M63" firstAttribute="trailing" secondItem="6f8-zl-uFs" secondAttribute="trailing" id="eUN-uM-t6Q"/>
-                            <constraint firstItem="sUO-1k-lHG" firstAttribute="top" secondItem="4eL-9a-Ri3" secondAttribute="bottom" constant="20" id="kDR-H8-pc4"/>
                             <constraint firstItem="32f-sQ-N2l" firstAttribute="leading" secondItem="6f8-zl-uFs" secondAttribute="leading" constant="20" id="m7C-aC-C3y"/>
-                            <constraint firstItem="6f8-zl-uFs" firstAttribute="trailing" secondItem="sUO-1k-lHG" secondAttribute="trailing" constant="20" id="pBk-Gm-tAY"/>
                             <constraint firstItem="BJu-QC-M63" firstAttribute="bottom" secondItem="6f8-zl-uFs" secondAttribute="bottom" id="rZQ-dN-dmZ"/>
-                            <constraint firstItem="sUO-1k-lHG" firstAttribute="leading" secondItem="6f8-zl-uFs" secondAttribute="leading" constant="20" id="rhd-qt-Fnn"/>
                             <constraint firstItem="BJu-QC-M63" firstAttribute="leading" secondItem="6f8-zl-uFs" secondAttribute="leading" id="rtD-sy-wki"/>
                             <constraint firstItem="4eL-9a-Ri3" firstAttribute="top" secondItem="32f-sQ-N2l" secondAttribute="bottom" constant="20" id="s1v-qY-EaQ"/>
-                            <constraint firstItem="iXp-6Z-3nQ" firstAttribute="leading" secondItem="6f8-zl-uFs" secondAttribute="leading" constant="30" id="vZ4-Uk-3xQ"/>
                         </constraints>
                     </view>
                     <connections>

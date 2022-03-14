@@ -18,12 +18,12 @@ class MusleWorkoutsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setCellProperties(image:UIImage, muscleName:String){
+    func setCellProperties(image:UIImage, muscleName:String) {
         self.muscleImage.image = image
         self.muscleName.text = muscleName
     }
     
-    func nib()->UINib{
+    func nib() -> UINib {
         return UINib(nibName: "MusleWorkoutsCollectionViewCell", bundle: nil)
     }
 

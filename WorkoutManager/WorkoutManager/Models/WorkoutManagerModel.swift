@@ -1,6 +1,6 @@
 import Foundation
 
-struct WorkoutManager: Codable {
+struct WorkoutManager: Codable, Hashable {
     let workoutPlans: [WorkoutPlan]
     
     enum CodingKeys :String, CodingKey {
@@ -8,7 +8,7 @@ struct WorkoutManager: Codable {
     }
 }
 
-struct WorkoutPlan: Codable {
+struct WorkoutPlan: Codable, Hashable {
     let id: Int
     let name: String
     let description: String
