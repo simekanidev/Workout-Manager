@@ -26,6 +26,8 @@
 		0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */; };
 		0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */; };
 		0BD47C5427DF6F16006ABF5D /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C5327DF6F16006ABF5D /* CollectionViewExtension.swift */; };
+		0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */; };
+		0BD47C5827DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BD47C5327DF6F16006ABF5D /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
+		0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusleWorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusleWorkoutsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 			children = (
 				0B066C0F27D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift */,
 				0B066C1027D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib */,
+				0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */,
+				0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			files = (
 				0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */,
 				0B4582AF27C7600E00E074C6 /* Main.storyboard in Resources */,
+				0BD47C5827DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib in Resources */,
 				0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */,
 				0B066C1227D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib in Resources */,
 			);
@@ -392,6 +399,7 @@
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */,
 				0B066C1127D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift in Sources */,
+				0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */,
 				0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */,
 				0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */,
 			);
