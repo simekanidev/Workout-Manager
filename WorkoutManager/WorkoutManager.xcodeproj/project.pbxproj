@@ -27,6 +27,7 @@
 		0B6AE4C527C6783800186185 /* WorkoutManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */; };
 		0B6AE4C727C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */; };
 		0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */; };
+		0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITests.swift; sourceTree = "<group>"; };
 		0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4582AB27C7600E00E074C6 /* UserViewController.swift */,
+				0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */,
 				0B4582BC27C782EE00E074C6 /* WorkoutManagerViewController.swift */,
 				0B066C0D27D891100098D29A /* ViewController.swift */,
 			);
@@ -381,6 +384,7 @@
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B6AE4A627C6783400186185 /* SceneDelegate.swift in Sources */,
 				0B066C1127D8A12F0098D29A /* CollectionViewCell.swift in Sources */,
+				0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */,
 				0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
