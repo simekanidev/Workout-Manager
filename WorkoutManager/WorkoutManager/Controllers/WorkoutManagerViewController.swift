@@ -10,22 +10,16 @@ import UIKit
 typealias WorkoutManagerDataSource = UICollectionViewDiffableDataSource<WorkoutManager.Section, WorkoutPlan>
 typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.Section,WorkoutPlan>
 
-class WorkoutManagerViewController: UIViewController {
-    var workoutsDataSource: WorkoutManagerDataSource!
-    var workoutSnapshot: WorkoutManagerSnapShot!
-    
-    private var workouts: WorkoutManager?
-    
-    @IBOutlet var workoutPlans : UICollectionView!
 
-    private func configureCollectionView() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 230, height: 370)
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = CGFloat(45)
-        return layout
-    }
+class WorkoutManagerViewController: UIViewController {
+
     
+    @IBOutlet private var workoutPlans : UICollectionView!
+    
+    private var workoutsDataSource: WorkoutManagerDataSource!
+    private var workoutSnapshot: WorkoutManagerSnapShot!
+    private var workouts: WorkoutManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -33,9 +27,7 @@ class WorkoutManagerViewController: UIViewController {
                               forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
         
         workoutPlans.collectionViewLayout = configureLandingPageCollectionView()
-        // workoutPlans.delegate = self
         configureWorkoutPlansDataSource()
-        
         getWorkoutPlans()
         
     }
@@ -85,25 +77,15 @@ extension WorkoutManagerViewController {
 
         return section
     }
-}
-
-// MARK: Extention
-import Foundation
-
-extension WorkoutManagerViewController {
     
     func configureWorkoutPlansDataSource() {
-        
         workoutsDataSource = WorkoutManagerDataSource(collectionView: workoutPlans) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-            
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as? WorkoutPlanCollectionViewCell else {return nil }
             
             guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
             
             cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
-            
             return cell
-            
         }
         
     }
@@ -115,7 +97,14 @@ extension WorkoutManagerViewController {
         workoutsDataSource.apply(workoutSnapshot,animatingDifferences: false)
         
     }
+}
+
+// MARK: Extention
+import Foundation
+
+extension WorkoutManagerViewController {
     
+   
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
         URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
@@ -132,5 +121,4 @@ extension WorkoutManagerViewController {
                 print(error)
             }})
     }
-    
 }
