@@ -1,6 +1,12 @@
 import Foundation
 
 struct WorkoutManager: Codable, Hashable {
+    
+    enum Section: String, CaseIterable {
+        case workoutPlans = "Workout Plans"
+        case muscleExersises = "Muscle Excersises"
+    }
+    
     let workoutPlans: [WorkoutPlan]
     
     enum CodingKeys :String, CodingKey {

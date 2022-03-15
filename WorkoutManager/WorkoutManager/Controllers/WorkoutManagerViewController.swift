@@ -7,17 +7,12 @@
 
 import UIKit
 
-enum Section {
-    case workoutPlans
-}
-
-typealias WorkoutManagerDataSource = UICollectionViewDiffableDataSource<Section, WorkoutPlan>
-typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<Section,WorkoutPlan>
+typealias WorkoutManagerDataSource = UICollectionViewDiffableDataSource<WorkoutManager.Section, WorkoutPlan>
+typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.Section,WorkoutPlan>
 
 class WorkoutManagerViewController: UIViewController {
-    
-    private var workoutsDataSource:WorkoutManagerDataSource!
-    private var workoutSnapshot:WorkoutManagerSnapShot!
+    var workoutsDataSource: WorkoutManagerDataSource!
+    var workoutSnapshot: WorkoutManagerSnapShot!
     
     private var workouts: WorkoutManager?
     
@@ -37,9 +32,8 @@ class WorkoutManagerViewController: UIViewController {
         workoutPlans.register(WorkoutPlanCollectionViewCell.nib(),
                               forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
         
-        workoutPlans.collectionViewLayout = configureCollectionView()
+        workoutPlans.collectionViewLayout = configureLandingPageCollectionView()
         // workoutPlans.delegate = self
-        // workoutPlans.dataSource = self
         configureWorkoutPlansDataSource()
         
         getWorkoutPlans()
@@ -50,113 +44,82 @@ class WorkoutManagerViewController: UIViewController {
 
 extension WorkoutManagerViewController {
     
-//    func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
-//
-//        let sectionProvider = { ( sectionIndex: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
-//            var section : NSCollectionLayoutSection
-//
-//            switch sectionIndex {
-//            case 0 :
-//                section = self.workoutPlansSection()
-//
-//            case 1:
-//                section = self.workoutPlansSection()
-//            default:
-//                section = self.workoutPlansSection()
-//            }
-//
-//            return section
-//        }
-//
-//        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
-//
-//    }
+    func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
+
+        let sectionProvider = { ( sectionIndex: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
+            var section : NSCollectionLayoutSection
+
+            switch sectionIndex {
+            case 0 :
+                section = self.workoutPlansSection()
+
+            case 1:
+                section = self.workoutPlansSection()
+            default:
+                section = self.workoutPlansSection()
+            }
+
+            return section
+        }
+
+        return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
+
+    }
     
     func workoutPlansSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(230),
-                                              heightDimension: .absolute(370))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(270),
+                                              heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        item.contentInsets = NSDirectionalEdgeInsets(top:10, leading:15, bottom: 10 , trailing: 15)
       
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .absolute(44))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(3/2),
+                                              heightDimension: .fractionalHeight(2/3))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                          subitems: [item])
-      
+        
         let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading:10, bottom: 10, trailing: 10)
 
         return section
     }
 }
 
-// MARK: Data Source
+// MARK: Extention
+import Foundation
 
 extension WorkoutManagerViewController {
     
     func configureWorkoutPlansDataSource() {
         
         workoutsDataSource = WorkoutManagerDataSource(collectionView: workoutPlans) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-         
+            
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as? WorkoutPlanCollectionViewCell else {return nil }
-    
+            
             guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
-    
+            
             cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
-          
+            
             return cell
-           
+            
         }
-          
-      }
+        
+    }
     
     func applySnapShot(workoutPlans: [WorkoutPlan]) {
         workoutSnapshot = WorkoutManagerSnapShot()
-        workoutSnapshot.appendSections([Section.workoutPlans])
+        workoutSnapshot.appendSections([WorkoutManager.Section.workoutPlans])
         workoutSnapshot.appendItems(workoutPlans)
         workoutsDataSource.apply(workoutSnapshot,animatingDifferences: false)
         
     }
     
-}
-
-//
-// extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        // swiftlint:disable force_cast
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as! WorkoutPlanCollectionViewCell
-//
-//        guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
-//
-//        cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
-//        // swiftlint:enable force_cast
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//
-//        print("You selescted an item")
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-//        guard let finalWorkouts = self.workouts else {return 0}
-//        return finalWorkouts.workoutPlans.count
-//    }
-// }
-
-// extension WorkoutManagerViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 230, height: 370)
-//    }
-// }
-
-extension WorkoutManagerViewController {
-    
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
         URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
-        
             switch result {
-                
             case .success(let workoutPlanData):
                 self?.workouts = workoutPlanData
                 DispatchQueue.main.async {
