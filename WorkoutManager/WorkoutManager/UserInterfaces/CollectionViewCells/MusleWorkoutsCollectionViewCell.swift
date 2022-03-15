@@ -9,8 +9,8 @@ import UIKit
 
 class MusleWorkoutsCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var muscleImage: UIImageView!
-    @IBOutlet weak var muscleName: UILabel!
+    @IBOutlet private weak var muscleImage: UIImageView!
+    @IBOutlet private weak var muscleName: UILabel!
     static let identifier = "MusleWorkoutsCollectionViewCell"
     
     override func awakeFromNib() {

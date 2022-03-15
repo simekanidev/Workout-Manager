@@ -9,8 +9,8 @@ import UIKit
 
 class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
     override func awakeFromNib() {

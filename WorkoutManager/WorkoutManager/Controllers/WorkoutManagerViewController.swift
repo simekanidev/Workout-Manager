@@ -46,6 +46,7 @@ extension WorkoutManagerViewController {
                 section = self.workoutPlansSection()
 
             case 1:
+                //TODO : Other section to be added
                 section = self.workoutPlansSection()
             default:
                 section = self.workoutPlansSection()
@@ -97,14 +98,7 @@ extension WorkoutManagerViewController {
         workoutsDataSource.apply(workoutSnapshot,animatingDifferences: false)
         
     }
-}
-
-// MARK: Extention
-import Foundation
-
-extension WorkoutManagerViewController {
     
-   
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
         URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
