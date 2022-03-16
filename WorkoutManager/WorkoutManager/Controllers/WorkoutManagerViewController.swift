@@ -37,13 +37,14 @@ class WorkoutManagerViewController: UIViewController {
 
 extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // swiftlint:disable force_cast
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as! WorkoutPlanCollectionViewCell
+        
+       
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath)
+                as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell()}
         
         guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
         
         cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
-        // swiftlint:enable force_cast
         return cell
     }
     
