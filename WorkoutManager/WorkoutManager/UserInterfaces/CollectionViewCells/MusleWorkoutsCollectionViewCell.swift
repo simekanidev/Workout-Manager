@@ -13,11 +13,7 @@ class MusleWorkoutsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var muscleName: UILabel!
     static let identifier = "MusleWorkoutsCollectionViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+ 
     func setCellProperties(image:UIImage, muscleName:String) {
         self.muscleImage.image = image
         self.muscleName.text = muscleName

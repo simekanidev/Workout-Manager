@@ -70,7 +70,8 @@ extension WorkoutManagerViewController {
     
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
+        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {
+            [weak self] result in
         
             switch result {
                 

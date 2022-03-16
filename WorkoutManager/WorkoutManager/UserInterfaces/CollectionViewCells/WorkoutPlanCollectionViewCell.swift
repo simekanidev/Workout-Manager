@@ -13,10 +13,6 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func setCellProperties(image: UIImage, label: String) {
         imageView.image = image
