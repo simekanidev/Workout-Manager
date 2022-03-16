@@ -37,7 +37,6 @@ class WorkoutManagerViewController: UIViewController {
 
 extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath)
                 as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell()}

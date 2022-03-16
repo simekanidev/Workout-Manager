@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-extension UIColor{
+extension UIColor {
     static var primaryColour  = UIColor(named: "Primary Colour")?.cgColor
 }

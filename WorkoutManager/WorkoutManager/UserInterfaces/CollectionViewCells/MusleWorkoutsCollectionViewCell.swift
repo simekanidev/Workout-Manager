@@ -12,7 +12,6 @@ class MusleWorkoutsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var muscleImage: UIImageView!
     @IBOutlet weak var muscleName: UILabel!
     static let identifier = "MusleWorkoutsCollectionViewCell"
-    
  
     func setCellProperties(image:UIImage, muscleName:String) {
         self.muscleImage.image = image

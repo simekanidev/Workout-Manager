@@ -13,7 +13,6 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
-    
     func setCellProperties(image: UIImage, label: String) {
         imageView.image = image
         self.imageView.layer.cornerRadius = 20
