@@ -13,18 +13,8 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func setCellProperties(image: UIImage, label: String) {
         imageView.image = image
-        self.imageView.layer.cornerRadius = 20
-        self.imageView.clipsToBounds = true
-        self.imageView.layer.borderWidth = 7
-        self.imageView.layer.borderColor = UIColor(named: "Primary Colour")?.cgColor
-        imageView.contentMode = .scaleAspectFill
         statusLabel.text = label
     }
     
@@ -32,4 +22,14 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "WorkoutPlanCollectionViewCell", bundle: nil)
     }
 
+}
+
+extension WorkoutPlanCollectionViewCell {
+    func styleCell () {
+        self.imageView.layer.cornerRadius = 20
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.borderWidth = 7
+        self.imageView.layer.borderColor = UIColor.primaryColour
+        imageView.contentMode = .scaleAspectFill
+    }
 }

@@ -23,6 +23,7 @@
 		0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */; };
 		0B6AE4C527C6783800186185 /* WorkoutManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */; };
 		0B6AE4C727C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */; };
+		0BB48C1B27E237CE00A55288 /* UiColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB48C1A27E237CE00A55288 /* UiColorExtention.swift */; };
 		0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4C27DF0C12006ABF5D /* Model.xcdatamodeld */; };
 		0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */; };
 		0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		0B6AE4C027C6783800186185 /* WorkoutManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITests.swift; sourceTree = "<group>"; };
 		0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BB48C1A27E237CE00A55288 /* UiColorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UiColorExtention.swift; path = WorkoutManager/Extentions/UiColorExtention.swift; sourceTree = SOURCE_ROOT; };
 		0BD47C4D27DF0C12006ABF5D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusleWorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				0B066C0F27D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift */,
+				0BB48C1A27E237CE00A55288 /* UiColorExtention.swift */,
 				0B066C1027D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib */,
 				0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */,
 				0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */,
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB48C1B27E237CE00A55288 /* UiColorExtention.swift in Sources */,
 				0B066C0E27D891100098D29A /* WorkoutManagerViewController.swift in Sources */,
 				0B4582B027C7600E00E074C6 /* Constants.swift in Sources */,
 				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,

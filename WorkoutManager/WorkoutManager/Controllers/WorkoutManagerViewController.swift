@@ -91,13 +91,12 @@ extension WorkoutManagerViewController {
             default: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
             }
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else {return nil }
-            
-           
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return nil }
             
             guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
             
             cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
+            cell.styleCell()
             return cell
         }
         
@@ -113,7 +112,9 @@ extension WorkoutManagerViewController {
     
     func getWorkoutPlans() {
         let url = Constants.baseURL?.appendingPathComponent("workout/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {[weak self]result in
+        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {
+            [weak self] result in
+            
             switch result {
             case .success(let workoutPlanData):
                 self?.workouts = workoutPlanData
