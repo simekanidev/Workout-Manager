@@ -19,7 +19,7 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 20
         self.imageView.clipsToBounds = true
         self.imageView.layer.borderWidth = 7
-        self.imageView.layer.borderColor = UIColor(named: "Primary Colour")?.cgColor
+        self.imageView.layer.borderColor = UIColor.primaryColour
         imageView.contentMode = .scaleAspectFill
         statusLabel.text = label
     }
