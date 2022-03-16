@@ -21,9 +21,10 @@ class MusleWorkoutsCollectionViewCell: UICollectionViewCell {
     func setCellProperties(image:UIImage, muscleName:String) {
         self.muscleImage.image = image
         self.muscleName.text = muscleName
+        contentView.backgroundColor = .red
     }
     
-    func nib() -> UINib {
+    static func nib() -> UINib {
         return UINib(nibName: "MusleWorkoutsCollectionViewCell", bundle: nil)
     }
 

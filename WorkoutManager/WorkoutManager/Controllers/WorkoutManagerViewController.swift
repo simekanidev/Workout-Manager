@@ -10,9 +10,7 @@ import UIKit
 typealias WorkoutManagerDataSource = UICollectionViewDiffableDataSource<WorkoutManager.Section, WorkoutPlan>
 typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.Section,WorkoutPlan>
 
-
 class WorkoutManagerViewController: UIViewController {
-
     
     @IBOutlet private var workoutPlans : UICollectionView!
     
@@ -25,6 +23,9 @@ class WorkoutManagerViewController: UIViewController {
       
         workoutPlans.register(WorkoutPlanCollectionViewCell.nib(),
                               forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
+        
+        workoutPlans.register(MusleWorkoutsCollectionViewCell.nib(),
+                              forCellWithReuseIdentifier: MusleWorkoutsCollectionViewCell.identifier)
         
         workoutPlans.collectionViewLayout = configureLandingPageCollectionView()
         configureWorkoutPlansDataSource()
@@ -46,7 +47,7 @@ extension WorkoutManagerViewController {
                 section = self.workoutPlansSection()
 
             case 1:
-                //TODO : Other section to be added
+                // TODO : Other section to be added
                 section = self.workoutPlansSection()
             default:
                 section = self.workoutPlansSection()
@@ -81,7 +82,18 @@ extension WorkoutManagerViewController {
     
     func configureWorkoutPlansDataSource() {
         workoutsDataSource = WorkoutManagerDataSource(collectionView: workoutPlans) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as? WorkoutPlanCollectionViewCell else {return nil }
+            
+            let reuseIdentifier: String
+            
+            switch indexPath.section {
+            case 0: reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
+            case 1: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
+            default: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
+            }
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else {return nil }
+            
+           
             
             guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
             
