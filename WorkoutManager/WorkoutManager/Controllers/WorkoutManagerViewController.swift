@@ -119,7 +119,6 @@ extension WorkoutManagerViewController {
             case .success(let workoutPlanData):
                 self?.workouts = workoutPlanData
                 DispatchQueue.main.async {
-                    
                     guard let workouts = self?.workouts?.workoutPlans else { return}
                     self?.applySnapShot(workoutPlans: workouts)
                     self?.workoutPlans.reloadData()
