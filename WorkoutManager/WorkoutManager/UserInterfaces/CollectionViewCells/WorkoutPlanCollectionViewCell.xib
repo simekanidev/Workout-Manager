@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkoutPlanCollectionViewCell" id="gTV-IL-0wX" customClass="WorkoutPlanCollectionViewCell" customModule="WorkoutManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="201" height="391"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="201" height="391"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0tp-3X-zdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="201" height="360"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-FV-raQ">
+                        <rect key="frame" x="0.0" y="368" width="201" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="eTg-FV-raQ" secondAttribute="bottom" constant="2" id="2zW-Ls-6Kq"/>
+                <constraint firstItem="0tp-3X-zdQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3KX-Vj-XZ5"/>
+                <constraint firstItem="eTg-FV-raQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7EV-Dn-zmK"/>
+                <constraint firstItem="eTg-FV-raQ" firstAttribute="top" secondItem="0tp-3X-zdQ" secondAttribute="bottom" constant="8" symbolic="YES" id="7yL-ea-MmO"/>
+                <constraint firstItem="0tp-3X-zdQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AYh-k6-uxL"/>
+                <constraint firstItem="eTg-FV-raQ" firstAttribute="top" secondItem="0tp-3X-zdQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Dk5-rW-UXE"/>
+                <constraint firstAttribute="trailing" secondItem="0tp-3X-zdQ" secondAttribute="trailing" id="wMX-gn-uEK"/>
+                <constraint firstAttribute="trailing" secondItem="eTg-FV-raQ" secondAttribute="trailing" id="x8X-QF-Rpk"/>
+            </constraints>
+            <size key="customSize" width="201" height="391"/>
+            <connections>
+                <outlet property="imageView" destination="0tp-3X-zdQ" id="LXu-tQ-Rvo"/>
+                <outlet property="statusLabel" destination="eTg-FV-raQ" id="QeE-nA-LR7"/>
+            </connections>
+            <point key="canvasLocation" x="241.30434782608697" y="226.67410714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
