@@ -22,12 +22,18 @@ class LoginViewController: UIViewController {
                 let username = userNameField.text else { return }
         
         if username == "Admin" && password == "TestPass123" {
+            print("herre")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let viewController = storyboard
                 .instantiateViewController(withIdentifier: "WorkoutManagerViewController") as?
                 WorkoutManagerViewController {
                 self.navigationController?.pushViewController(viewController, animated: false)
             }
+        } else {
+            let alert = UIAlertController(title: "Incorrect details", message: "incorrect Username/Password enteres", preferredStyle: UIAlertController.Style.alert)
+            
+                    alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
         }
         
     }
