@@ -9,12 +9,9 @@
 <div align="center">
   
   <a>
-    <img src="https://user-images.githubusercontent.com/100220689/159272971-05a732fc-2e18-43a7-bd1a-15dc7c86e2df.png" alt="Logo" width="400" height="150">
+    <img src="https://user-images.githubusercontent.com/100220689/159273314-82232e97-45a4-40ff-ba2f-4f5d143bd2e2.png" alt="Logo" width="500" height="200">
   </a>
 </div>
-
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
