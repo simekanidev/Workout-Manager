@@ -58,7 +58,6 @@ Below some screenshots of the application are provided.
 ## Git Branching Stratergy
 Git Flow was used for the branching strategy of the project. 
 ### Structure
-The 
 main
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- develop
