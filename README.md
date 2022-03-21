@@ -9,7 +9,7 @@
 <div align="center">
   
   <a>
-    <img src="https://user-images.githubusercontent.com/100220689/159273314-82232e97-45a4-40ff-ba2f-4f5d143bd2e2.png" alt="Logo" width="500" height="200">
+    <img src="https://user-images.githubusercontent.com/100220689/159274067-dfeee2d8-a17b-4d4e-a201-183a9f6d81e1.png" alt="Logo" width="500" height="200">
   </a>
 </div>
 
