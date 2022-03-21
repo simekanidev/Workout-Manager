@@ -60,6 +60,15 @@ Below some screenshots of the application are provided.
      </td> 
      <td><img alt="landing" src="https://user-images.githubusercontent.com/100220689/159281801-7bc8825e-6cea-4315-9550-36a493360205.png" alt="1" width = 280px height = 500px ></td> 
   </tr>
+    <tr>
+    <td>
+      <img alt="sininp"  src="https://user-images.githubusercontent.com/100220689/159282393-e2fd2f8a-7d63-4bc1-bd1f-c9da12990354.png" alt="1"
+           width=500px height = 280px >
+     </td>
+     <td>
+         <img alt="landscape" src="https://user-images.githubusercontent.com/100220689/159282415-75a96bde-bc7c-4d37-b70b-234374af5c7e.png" alt="1" width = 500px height = 280px >
+     </td> 
+  </tr>
 </table>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
