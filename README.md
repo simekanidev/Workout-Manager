@@ -56,15 +56,19 @@ Below some screenshots of the application are provided.
 
 
 ## Git Branching Stratergy
-
+Git Flow was used for the branching strategy of the project. 
+### Structure
+The 
 main
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- develop
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-feature
-
-
-
+###Rules 
+* Main and Develop
+  * Pull requests are required to commit code 
+  * 2 Collaborators are required to review before merge can take place
+  * All conversations have to be resolved berfore merge can take place   
 
 
 
