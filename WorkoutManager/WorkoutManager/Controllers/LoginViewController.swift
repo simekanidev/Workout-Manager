@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
             if let viewController = storyboard
                 .instantiateViewController(withIdentifier: "WorkoutManagerViewController") as?
                 WorkoutManagerViewController {
+                viewController.navigationItem.setHidesBackButton(true, animated: false)
                 self.navigationController?.pushViewController(viewController, animated: false)
             }
         } else {
