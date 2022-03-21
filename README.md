@@ -47,7 +47,7 @@ Trainate is a iOS application that serves the purpose of a Workout Mangager. The
 
 Below some screenshots of the application are provided. 
 
-
+### Portrait
 <table>
    <tr>
     <td>
@@ -59,6 +59,8 @@ Below some screenshots of the application are provided.
      </td> 
      <td><img alt="landing" src="https://user-images.githubusercontent.com/100220689/159281801-7bc8825e-6cea-4315-9550-36a493360205.png" alt="1" width = "280px" height ="500px"></td> 
 </table>
+
+### Landscape
 <table>
     <tr>
     <td>
@@ -72,10 +74,10 @@ Below some screenshots of the application are provided.
 </table>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Built With
 
 * [Swift](https://www.swift.org/)
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
