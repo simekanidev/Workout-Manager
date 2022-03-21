@@ -64,7 +64,7 @@ main
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- develop
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-feature
-###Rules 
+### Rules 
 * Main and Develop
   * Pull requests are required to commit code 
   * 2 Collaborators are required to review before merge can take place
