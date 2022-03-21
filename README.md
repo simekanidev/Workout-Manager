@@ -55,7 +55,13 @@ Below some screenshots of the application are provided.
 
 
 
+## Git Branching Stratergy
 
+main
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- develop
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-feature
 
 
 
