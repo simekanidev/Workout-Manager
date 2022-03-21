@@ -32,7 +32,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-
   </ol>
 </details>
 
@@ -59,7 +58,8 @@ Below some screenshots of the application are provided.
          <img alt="signin" src="https://user-images.githubusercontent.com/100220689/159281782-840dc7b1-5ee4-4a7c-b2cd-5aa0f08cfa6e.png" alt="1" width = "280px" height ="500px" >
      </td> 
      <td><img alt="landing" src="https://user-images.githubusercontent.com/100220689/159281801-7bc8825e-6cea-4315-9550-36a493360205.png" alt="1" width = "280px" height ="500px"></td> 
-  </tr>
+</table>
+<table>
     <tr>
     <td>
       <img alt="sininp"  src="https://user-images.githubusercontent.com/100220689/159282393-e2fd2f8a-7d63-4bc1-bd1f-c9da12990354.png" alt="1"
