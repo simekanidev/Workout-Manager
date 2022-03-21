@@ -36,24 +36,39 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
+Trainate is a iOS application that serves the purpose of a Workout Mangager. The application allows users to view Workout plans and exersies that's made availiable by the wger.de API. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Below some screenshots of the application are provided. 
 
 
+<table>
+   <tr>
+    <td>
+      <img alt="launch"  src="https://user-images.githubusercontent.com/100220689/159281758-32f83d9f-635f-43a9-a562-55f3bf405d06.png" alt="1"
+           width=280px height = 500px >
+     </td>
+     <td>
+         <img alt="signin" src="https://user-images.githubusercontent.com/100220689/159281782-840dc7b1-5ee4-4a7c-b2cd-5aa0f08cfa6e.png" alt="1" width = 280px height = 500px >
+     </td> 
+     <td><img alt="landing" src="https://user-images.githubusercontent.com/100220689/159281801-7bc8825e-6cea-4315-9550-36a493360205.png" alt="1" width = 280px height = 500px ></td> 
+  </tr>
+</table>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 ### Built With
 
 * [Swift](https://www.swift.org/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -72,13 +87,7 @@ This is an example of how to list things you need to use the software and how to
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
