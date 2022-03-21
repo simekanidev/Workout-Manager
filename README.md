@@ -62,7 +62,7 @@ main
 </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- develop
 </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-feature
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- feature-name
 ### Rules 
 * Main and Develop
   * Pull requests are required to commit code 
