@@ -38,7 +38,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Trainate is a iOS application that serves the purpose of a Workout Mangager. The application allows users to view Workout plans and exersies that's made availiable by the wger.de API. 
+Trainate is a iOS application that serves the purpose of a Workout Mangager. The application allows users to view workout plans and exersies for all muscle groups sourced from the wger.de API. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
