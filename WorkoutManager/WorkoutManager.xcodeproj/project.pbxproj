@@ -22,6 +22,8 @@
 		0B4C972227EBAB6F00D31294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C971B27EB9ACF00D31294 /* AppDelegate.swift */; };
 		0B4C972327EBAB7E00D31294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C971C27EB9ACF00D31294 /* SceneDelegate.swift */; };
 		0B4C972627EBAD5D00D31294 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C972527EBAD5D00D31294 /* UIViewControllerExtension.swift */; };
+		0B4C972827EC543800D31294 /* WorkoutManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C972727EC543800D31294 /* WorkoutManagerViewModel.swift */; };
+		0B4C972A27EC55C800D31294 /* WorkoutManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C972927EC55C800D31294 /* WorkoutManagerRepository.swift */; };
 		0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */; };
 		0B6AE4C527C6783800186185 /* WorkoutManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C427C6783800186185 /* WorkoutManagerUITests.swift */; };
 		0B6AE4C727C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6AE4C627C6783800186185 /* WorkoutManagerUITestsLaunchTests.swift */; };
@@ -64,6 +66,8 @@
 		0B4C971D27EB9DCA00D31294 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0B4C972027EBAA7B00D31294 /* UiColourExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiColourExtension.swift; sourceTree = "<group>"; };
 		0B4C972527EBAD5D00D31294 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		0B4C972727EC543800D31294 /* WorkoutManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerViewModel.swift; sourceTree = "<group>"; };
+		0B4C972927EC55C800D31294 /* WorkoutManagerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerRepository.swift; sourceTree = "<group>"; };
 		0B6AE4A027C6783400186185 /* WorkoutManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6AE4B127C6783600186185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6AE4B627C6783800186185 /* WorkoutManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4C971D27EB9DCA00D31294 /* LoginViewModel.swift */,
+				0B4C972727EC543800D31294 /* WorkoutManagerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				0B4582A027C7600E00E074C6 /* Models */,
 				0BD47C4B27DF0BC2006ABF5D /* LocalDatabse */,
+				0B4C972927EC55C800D31294 /* WorkoutManagerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -419,9 +425,11 @@
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B066C1127D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift in Sources */,
 				0B4C971E27EB9DCA00D31294 /* LoginViewModel.swift in Sources */,
+				0B4C972827EC543800D31294 /* WorkoutManagerViewModel.swift in Sources */,
 				0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */,
 				0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */,
 				0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */,
+				0B4C972A27EC55C800D31294 /* WorkoutManagerRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
