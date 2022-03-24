@@ -25,12 +25,7 @@ class LoginViewController: UIViewController {
         guard let password = passwordField.text ,
               let username = userNameField.text else { return }
         
-        if viewModel.checkLoginDetails(username: password, password: username) {
-            navigateToPage()
-            
-        } else {
-            showError(error: "Incorrect details")
-        }
+            viewModel.loginUser(with: username, and: password)
         
     }
 }

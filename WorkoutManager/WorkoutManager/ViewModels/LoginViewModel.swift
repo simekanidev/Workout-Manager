@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import UIKit
+
 protocol ViewModelDelegate:AnyObject {
     func showError(error:String)
     func navigateToPage()
-    
 }
 
 class LoginViewModel {
@@ -20,10 +19,12 @@ class LoginViewModel {
         self.delegate = delegate
     }
     
-    func checkLoginDetails(username:String, password:String) -> Bool {
-        if username == "Admin" && password == "TestPass123" {
-            return true
-        }
-        return false
+    func loginUser(with username: String, and password:String) {
+        self.checkLoginDetails(username: username, password: password)
+        ? delegate?.navigateToPage() : delegate?.showError(error: "Incorrect Login Details")
+    }
+    
+    private func checkLoginDetails(username:String, password:String) -> Bool {
+        return username == "Admin" && password == "TestPass123"
     }
 }
