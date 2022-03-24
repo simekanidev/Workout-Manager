@@ -1,8 +1,8 @@
 //
-//  UiColorExtention.swift
+//  UiColourExtension.swift
 //  WorkoutManager
 //
-//  Created by Simekani Mabambi on 2022/03/16.
+//  Created by Simekani Mabambi on 2022/03/23.
 //
 
 import Foundation

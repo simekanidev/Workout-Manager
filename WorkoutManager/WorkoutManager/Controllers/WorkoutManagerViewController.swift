@@ -14,6 +14,8 @@ class WorkoutManagerViewController: UIViewController {
     
     @IBOutlet private var workoutPlans : UICollectionView!
     
+    static let identifier = "WorkoutManagerViewController"
+    
     private var workoutsDataSource: WorkoutManagerDataSource!
     private var workoutSnapshot: WorkoutManagerSnapShot!
     private var workouts: WorkoutManager?
