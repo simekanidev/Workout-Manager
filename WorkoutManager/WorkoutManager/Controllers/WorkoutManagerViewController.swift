@@ -98,13 +98,7 @@ extension WorkoutManagerViewController {
     func configureWorkoutPlansDataSource() {
         self.workoutsDataSource = WorkoutManagerDataSource(collectionView: self.workoutPlansCollectionView) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
             
-            let reuseIdentifier: String
-            
-            switch indexPath.section {
-            case 0: reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
-            case 1: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
-            default: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
-            }
+            let reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return nil }
             
