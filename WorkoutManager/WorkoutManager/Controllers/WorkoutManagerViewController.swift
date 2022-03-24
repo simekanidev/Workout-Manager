@@ -44,11 +44,11 @@ extension WorkoutManagerViewController : WorkoutManagerDelegate{
     }
     
     func showError(error: String) {
-        //will implement
+        //will implement for upcoming feature
     }
     
     func navigateToPage() {
-    //will implement
+        //will implement for upcoming feature
     }
     
     
@@ -61,29 +61,14 @@ extension WorkoutManagerViewController {
         workoutPlansCollectionView.register(WorkoutPlanCollectionViewCell.nib(),
                                             forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
         
-        workoutPlansCollectionView.register(MusleWorkoutsCollectionViewCell.nib(),
-                                            forCellWithReuseIdentifier: MusleWorkoutsCollectionViewCell.identifier)
-        
         workoutPlansCollectionView.collectionViewLayout = configureLandingPageCollectionView()
     }
     
     func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
 
         let sectionProvider = { ( sectionIndex: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
-            var section : NSCollectionLayoutSection
-
-            switch sectionIndex {
-            case 0 :
-                section = self.workoutPlansSection()
-
-            case 1:
-                // TODO : Other section to be added
-                section = self.workoutPlansSection()
-            default:
-                section = self.workoutPlansSection()
-            }
-
-            return section
+            // Other Sections will be added here
+            return self.workoutPlansSection()
         }
 
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)

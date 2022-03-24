@@ -21,7 +21,7 @@ class WorkoutManagerViewModel{
     init (delegate: WorkoutManagerDelegate){
         self.delegate = delegate
     }
-    
+
     
     func getWorkoutPlans() {
         
