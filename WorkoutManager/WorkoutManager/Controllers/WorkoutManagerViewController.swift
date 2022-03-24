@@ -24,13 +24,7 @@ class WorkoutManagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        workoutPlansCollectionView.register(WorkoutPlanCollectionViewCell.nib(),
-                              forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
-        
-        workoutPlansCollectionView.register(MusleWorkoutsCollectionViewCell.nib(),
-                              forCellWithReuseIdentifier: MusleWorkoutsCollectionViewCell.identifier)
-        
-        workoutPlansCollectionView.collectionViewLayout = configureLandingPageCollectionView()
+        configureCollectionView()
         configureWorkoutPlansDataSource()
         viewModel.getWorkoutPlans()
         
@@ -62,6 +56,16 @@ extension WorkoutManagerViewController : WorkoutManagerDelegate{
 
 
 extension WorkoutManagerViewController {
+    
+    fileprivate func configureCollectionView() {
+        workoutPlansCollectionView.register(WorkoutPlanCollectionViewCell.nib(),
+                                            forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
+        
+        workoutPlansCollectionView.register(MusleWorkoutsCollectionViewCell.nib(),
+                                            forCellWithReuseIdentifier: MusleWorkoutsCollectionViewCell.identifier)
+        
+        workoutPlansCollectionView.collectionViewLayout = configureLandingPageCollectionView()
+    }
     
     func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
 
