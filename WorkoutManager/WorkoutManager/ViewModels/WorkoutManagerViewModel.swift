@@ -8,40 +8,34 @@
 import Foundation
 
 protocol WorkoutManagerDelegate : ViewModelDelegate {
-    func reloadTableVIew()
+    func reloadCollectionView()
     func applyScreenshot(workoutManager:WorkoutManager)
 }
 
 class WorkoutManagerViewModel {
     
-     var workoutManager: WorkoutManager?
+    var workoutManager: WorkoutManager?
+    weak var delegate: WorkoutManagerDelegate?
+    var repository: WorkoutManagerRepositoryType?
     
-     weak var delegate: WorkoutManagerDelegate?
-    
-    init (delegate: WorkoutManagerDelegate) {
+    init (delegate: WorkoutManagerDelegate, repository: WorkoutManagerRepositoryType) {
         self.delegate = delegate
+        self.repository = repository
     }
-
+    
     func workoutPlan(atIndex: Int) -> WorkoutPlan? {
         return workoutManager?.workoutPlans[atIndex] ?? nil
     }
     
     func getWorkoutPlans() {
-        
-        let url = Constants.baseURL?.appendingPathComponent("workout/")
-        
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {
-            [weak self] result in
-            
+        repository?.fetchWorkoutPlans(completion: {[weak self] result in
             switch result {
-            case .success(let workoutPlanData):
-                self?.workoutManager = workoutPlanData
-                DispatchQueue.main.async {
+            case .success(let workoutManagerData):
+                self?.workoutManager = workoutManagerData
                     guard let workoutPlans = self?.workoutManager?.workoutPlans else { return }
                     let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
                     self?.delegate?.applyScreenshot(workoutManager: workoutManger)
-                    self?.delegate?.reloadTableVIew()
-                }
+                    self?.delegate?.reloadCollectionView()
             case .failure(let error):
                 print(error)
             }})

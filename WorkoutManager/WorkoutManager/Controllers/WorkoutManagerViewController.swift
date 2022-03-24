@@ -19,7 +19,7 @@ class WorkoutManagerViewController: UIViewController {
     private var workoutsDataSource: WorkoutManagerDataSource!
     private var workoutSnapshot: WorkoutManagerSnapShot!
     
-    private lazy var viewModel = WorkoutManagerViewModel(delegate: self)
+    private lazy var viewModel = WorkoutManagerViewModel(delegate: self,repository: WorkoutManagerRepository())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +33,17 @@ class WorkoutManagerViewController: UIViewController {
 }
 
 extension WorkoutManagerViewController : WorkoutManagerDelegate {
-    func reloadTableVIew() {
-        self.workoutPlansCollectionView.reloadData()
+    func reloadCollectionView() {
+        
+        DispatchQueue.main.async {
+            self.workoutPlansCollectionView.reloadData()
+        }
     }
     
     func applyScreenshot(workoutManager: WorkoutManager) {
-        self.applySnapShot(workoutPlans: workoutManager.workoutPlans)
+        DispatchQueue.main.async {
+            self.applySnapShot(workoutPlans: workoutManager.workoutPlans)
+        }
     }
     
     func showError(error: String) {
@@ -104,7 +109,6 @@ extension WorkoutManagerViewController {
             cell.styleCell()
             return cell
         }
-        
     }
     
     func applySnapShot(workoutPlans: [WorkoutPlan]) {
