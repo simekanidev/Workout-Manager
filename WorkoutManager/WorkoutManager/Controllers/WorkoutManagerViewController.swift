@@ -32,9 +32,7 @@ class WorkoutManagerViewController: UIViewController {
     
 }
 
-
-
-extension WorkoutManagerViewController : WorkoutManagerDelegate{
+extension WorkoutManagerViewController : WorkoutManagerDelegate {
     func reloadTableVIew() {
         self.workoutPlansCollectionView.reloadData()
     }
@@ -44,16 +42,14 @@ extension WorkoutManagerViewController : WorkoutManagerDelegate{
     }
     
     func showError(error: String) {
-        //will implement for upcoming feature
+        // will implement for upcoming feature
     }
     
     func navigateToPage() {
-        //will implement for upcoming feature
+        // will implement for upcoming feature
     }
     
-    
 }
-
 
 extension WorkoutManagerViewController {
     
@@ -66,7 +62,7 @@ extension WorkoutManagerViewController {
     
     func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
 
-        let sectionProvider = { ( sectionIndex: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
+        let sectionProvider = { ( _: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
             // Other Sections will be added here
             return self.workoutPlansSection()
         }

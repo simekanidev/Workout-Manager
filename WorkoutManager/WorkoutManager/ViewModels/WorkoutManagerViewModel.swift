@@ -7,22 +7,22 @@
 
 import Foundation
 
-protocol WorkoutManagerDelegate : ViewModelDelegate{
+protocol WorkoutManagerDelegate : ViewModelDelegate {
     func reloadTableVIew()
     func applyScreenshot(workoutManager:WorkoutManager)
 }
 
-class WorkoutManagerViewModel{
+class WorkoutManagerViewModel {
     
      var workoutManager: WorkoutManager?
     
-     var delegate: WorkoutManagerDelegate
+     weak var delegate: WorkoutManagerDelegate?
     
-    init (delegate: WorkoutManagerDelegate){
+    init (delegate: WorkoutManagerDelegate) {
         self.delegate = delegate
     }
 
-    func workoutPlan(atIndex: Int)->WorkoutPlan?{
+    func workoutPlan(atIndex: Int) -> WorkoutPlan? {
         return workoutManager?.workoutPlans[atIndex] ?? nil
     }
     
@@ -39,13 +39,12 @@ class WorkoutManagerViewModel{
                 DispatchQueue.main.async {
                     guard let workoutPlans = self?.workoutManager?.workoutPlans else { return }
                     let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
-                    self?.delegate.applyScreenshot(workoutManager: workoutManger)
-                    self?.delegate.reloadTableVIew()
+                    self?.delegate?.applyScreenshot(workoutManager: workoutManger)
+                    self?.delegate?.reloadTableVIew()
                 }
             case .failure(let error):
                 print(error)
             }})
     }
-
     
 }
