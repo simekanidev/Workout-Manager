@@ -22,6 +22,9 @@ class WorkoutManagerViewModel{
         self.delegate = delegate
     }
 
+    func workoutPlan(atIndex: Int)->WorkoutPlan?{
+        return workoutManager?.workoutPlans[atIndex] ?? nil
+    }
     
     func getWorkoutPlans() {
         

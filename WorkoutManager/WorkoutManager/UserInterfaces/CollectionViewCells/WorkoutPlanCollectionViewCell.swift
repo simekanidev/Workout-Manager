@@ -13,9 +13,9 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
-    func setCellProperties(image: UIImage, label: String) {
-        imageView.image = image
-        statusLabel.text = label
+    func setCellProperties(workoutplan: WorkoutPlan) {
+        imageView.image = (workoutplan.image != nil) ? workoutplan.image : UIImage(named: "workout1")
+        statusLabel.text = workoutplan.name
     }
     
     static func nib() -> UINib {

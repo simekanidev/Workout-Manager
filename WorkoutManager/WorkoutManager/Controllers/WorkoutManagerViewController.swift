@@ -100,11 +100,11 @@ extension WorkoutManagerViewController {
             
             let reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return nil }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
             
-            guard let finalWorkouts = self.viewModel.workoutManager?.workoutPlans else {return cell}
+            guard let workoutPlan = self.viewModel.workoutPlan(atIndex: indexPath.item) else { return UICollectionViewCell()}
             
-            cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
+            cell.setCellProperties(workoutplan: workoutPlan)
             cell.styleCell()
             return cell
         }
