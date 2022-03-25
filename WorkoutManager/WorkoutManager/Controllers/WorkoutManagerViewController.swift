@@ -13,28 +13,21 @@ typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.S
 class WorkoutManagerViewController: UIViewController {
     
     @IBOutlet private var workoutPlansCollectionView : UICollectionView!
-    
-    static let identifier = "WorkoutManagerViewController"
-    
     private var workoutsDataSource: WorkoutManagerDataSource!
     private var workoutSnapshot: WorkoutManagerSnapShot!
+    static let identifier = "WorkoutManagerViewController"
     
     private lazy var viewModel = WorkoutManagerViewModel(delegate: self,repository: WorkoutManagerRepository())
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         configureCollectionView()
         configureWorkoutPlansDataSource()
         viewModel.getWorkoutPlans()
-        
     }
-    
 }
 
 extension WorkoutManagerViewController : WorkoutManagerDelegate {
     func reloadCollectionView() {
-        
         DispatchQueue.main.async {
             self.workoutPlansCollectionView.reloadData()
         }
@@ -53,27 +46,21 @@ extension WorkoutManagerViewController : WorkoutManagerDelegate {
     func navigateToPage() {
         // will implement for upcoming feature
     }
-    
 }
 
 extension WorkoutManagerViewController {
-    
     fileprivate func configureCollectionView() {
         workoutPlansCollectionView.register(WorkoutPlanCollectionViewCell.nib(),
                                             forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
-        
         workoutPlansCollectionView.collectionViewLayout = configureLandingPageCollectionView()
     }
     
     func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
-
         let sectionProvider = { ( _: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
             // Other Sections will be added here
             return self.workoutPlansSection()
         }
-
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
-
     }
     
     func workoutPlansSection() -> NSCollectionLayoutSection {
@@ -98,13 +85,9 @@ extension WorkoutManagerViewController {
     
     func configureWorkoutPlansDataSource() {
         self.workoutsDataSource = WorkoutManagerDataSource(collectionView: self.workoutPlansCollectionView) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-            
             let reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
-            
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
-            
             guard let workoutPlan = self.viewModel.workoutPlan(atIndex: indexPath.item) else { return UICollectionViewCell()}
-            
             cell.setCellProperties(workoutplan: workoutPlan)
             cell.styleCell()
             return cell
@@ -116,6 +99,5 @@ extension WorkoutManagerViewController {
         self.workoutSnapshot.appendSections([WorkoutManager.Section.workoutPlans])
         self.workoutSnapshot.appendItems(workoutPlans)
         self.workoutsDataSource.apply(self.workoutSnapshot,animatingDifferences: false)
-        
     }
 }
