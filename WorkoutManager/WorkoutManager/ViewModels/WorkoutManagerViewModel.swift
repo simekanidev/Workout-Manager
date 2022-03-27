@@ -14,7 +14,7 @@ protocol WorkoutManagerDelegate : ViewModelDelegate {
 
 class WorkoutManagerViewModel {
     
-    var workoutManager: WorkoutManager?
+    var workoutPlansInfo: WorkoutManager?
     weak var delegate: WorkoutManagerDelegate?
     var repository: WorkoutManagerRepositoryType?
     
@@ -24,15 +24,15 @@ class WorkoutManagerViewModel {
     }
     
     func workoutPlan(atIndex: Int) -> WorkoutPlan? {
-        return workoutManager?.workoutPlans[atIndex] ?? nil
+        return workoutPlansInfo?.workoutPlans[atIndex] ?? nil
     }
     
     func getWorkoutPlans() {
         repository?.fetchWorkoutPlans(completion: {[weak self] result in
             switch result {
             case .success(let workoutManagerData):
-                self?.workoutManager = workoutManagerData
-                    guard let workoutPlans = self?.workoutManager?.workoutPlans else { return }
+                self?.workoutPlansInfo = workoutManagerData
+                    guard let workoutPlans = self?.workoutPlansInfo?.workoutPlans else { return }
                     let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
                     self?.delegate?.applyScreenshot(workoutManager: workoutManger)
                     self?.delegate?.reloadCollectionView()
