@@ -28,7 +28,7 @@ class WorkoutManagerViewModel {
     }
     
     func getWorkoutPlans() {
-        repository?.fetchWorkoutPlans(completion: {[weak self] result in
+        repository?.fetchWorkoutPlans(completion: { [weak self] result in
             switch result {
             case .success(let workoutManagerData):
                 self?.workoutPlansInfo = workoutManagerData
