@@ -70,7 +70,9 @@ extension URLSession {
                                        completion: @escaping (Result<Generic, Error>) -> Void) {
 
         guard let endpointUrl = url else {
-            completion(.failure(CustomError.invalidUrl))
+            DispatchQueue.main.async {
+                completion(.failure(CustomError.invalidUrl))
+            }
             return
         }
         
@@ -83,9 +85,14 @@ extension URLSession {
                 guard let safeData = data else {
 
                     if let error = error {
-                        completion(.failure(error))
+                        
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     } else {
-                        completion(.failure(CustomError.invalidData))
+                        DispatchQueue.main.async {
+                            completion(.failure(CustomError.invalidData))
+                        }
                     }
                     return
                 }
@@ -93,10 +100,13 @@ extension URLSession {
                 do {
          
                     let result = try JSONDecoder().decode(returnModel, from: safeData)
-
-                    completion(.success(result))
+                    DispatchQueue.main.async {
+                        completion(.success(result))
+                    }
                 } catch {
-                    completion(.failure(error))
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
                 }
                 
             }
@@ -104,10 +114,14 @@ extension URLSession {
             apiTask.resume()
             
         } catch CustomError.invalidBody {
-            completion(.failure(CustomError.invalidRequest))
+            DispatchQueue.main.async {
+                completion(.failure(CustomError.invalidRequest))
+            }
             
         } catch {
-            completion(.failure(error))
+            DispatchQueue.main.async {
+                completion(.failure(error))
+            }
             
         }
     }

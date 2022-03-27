@@ -28,15 +28,11 @@ class WorkoutManagerViewController: UIViewController {
 
 extension WorkoutManagerViewController : WorkoutManagerDelegate {
     func reloadCollectionView() {
-        DispatchQueue.main.async {
-            self.workoutPlansCollectionView.reloadData()
-        }
+        self.workoutPlansCollectionView.reloadData()
     }
     
     func applyScreenshot(workoutManager: WorkoutManager) {
-        DispatchQueue.main.async {
-            self.applySnapShot(workoutPlans: workoutManager.workoutPlans)
-        }
+        self.applySnapShot(workoutPlans: workoutManager.workoutPlans)
     }
     
     func showError(error: String) {
