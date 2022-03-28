@@ -25,6 +25,6 @@ class LoginViewModel {
     }
     
     private func checkLoginDetails(username:String, password:String) -> Bool {
-        return username == "Admin" && password == "TestPass123"
+        return username != "Admin" && password != "TestPass123"
     }
 }

@@ -13,15 +13,14 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var statusLabel: UILabel!
     static let identifier = "WorkoutPlanCollectionViewCell"
     
-    func setCellProperties(image: UIImage, label: String) {
-        imageView.image = image
-        statusLabel.text = label
+    func setCellProperties(workoutplan: WorkoutPlan) {
+        imageView.image = UIImage(named: "workout1")
+        statusLabel.text = workoutplan.name
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "WorkoutPlanCollectionViewCell", bundle: nil)
     }
-
 }
 
 extension WorkoutPlanCollectionViewCell {

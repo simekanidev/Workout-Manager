@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct WorkoutManager: Codable, Hashable {
     
@@ -15,6 +16,7 @@ struct WorkoutManager: Codable, Hashable {
 }
 
 struct WorkoutPlan: Codable, Hashable {
+    
     let id: Int
     let name: String
     let description: String

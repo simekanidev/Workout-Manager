@@ -24,9 +24,7 @@ class LoginViewController: UIViewController {
     @IBAction private func enterTapped(_ sender: Any) {
         guard let password = passwordField.text ,
               let username = userNameField.text else { return }
-        
             viewModel.loginUser(with: username, and: password)
-        
     }
 }
 

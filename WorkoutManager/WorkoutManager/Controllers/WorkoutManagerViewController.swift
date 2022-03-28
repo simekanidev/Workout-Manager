@@ -12,54 +12,51 @@ typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.S
 
 class WorkoutManagerViewController: UIViewController {
     
-    @IBOutlet private var workoutPlans : UICollectionView!
-    
-    static let identifier = "WorkoutManagerViewController"
-    
+    @IBOutlet private var workoutPlansCollectionView : UICollectionView!
     private var workoutsDataSource: WorkoutManagerDataSource!
     private var workoutSnapshot: WorkoutManagerSnapShot!
-    private var workouts: WorkoutManager?
-
+    static let identifier = "WorkoutManagerViewController"
+    
+    private lazy var viewModel = WorkoutManagerViewModel(delegate: self,repository: WorkoutManagerRepository())
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        workoutPlans.register(WorkoutPlanCollectionViewCell.nib(),
-                              forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
-        
-        workoutPlans.register(MusleWorkoutsCollectionViewCell.nib(),
-                              forCellWithReuseIdentifier: MusleWorkoutsCollectionViewCell.identifier)
-        
-        workoutPlans.collectionViewLayout = configureLandingPageCollectionView()
+        configureCollectionView()
         configureWorkoutPlansDataSource()
-        getWorkoutPlans()
-        
+        viewModel.getWorkoutPlans()
+    }
+}
+
+extension WorkoutManagerViewController : WorkoutManagerDelegate {
+    func reloadCollectionView() {
+        self.workoutPlansCollectionView.reloadData()
     }
     
+    func applyScreenshot(workoutManager: WorkoutManager) {
+        self.applySnapShot(workoutPlans: workoutManager.workoutPlans)
+    }
+    
+    func showError(error: String) {
+        // will implement for upcoming feature
+    }
+    
+    func navigateToPage() {
+        // will implement for upcoming feature
+    }
 }
 
 extension WorkoutManagerViewController {
+    fileprivate func configureCollectionView() {
+        workoutPlansCollectionView.register(WorkoutPlanCollectionViewCell.nib(),
+                                            forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
+        workoutPlansCollectionView.collectionViewLayout = configureLandingPageCollectionView()
+    }
     
     func configureLandingPageCollectionView() -> UICollectionViewCompositionalLayout {
-
-        let sectionProvider = { ( sectionIndex: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
-            var section : NSCollectionLayoutSection
-
-            switch sectionIndex {
-            case 0 :
-                section = self.workoutPlansSection()
-
-            case 1:
-                // TODO : Other section to be added
-                section = self.workoutPlansSection()
-            default:
-                section = self.workoutPlansSection()
-            }
-
-            return section
+        let sectionProvider = { ( _: Int, _: NSCollectionLayoutEnvironment ) -> NSCollectionLayoutSection? in
+            // Other Sections will be added here
+            return self.workoutPlansSection()
         }
-
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
-
     }
     
     func workoutPlansSection() -> NSCollectionLayoutSection {
@@ -83,50 +80,20 @@ extension WorkoutManagerViewController {
     }
     
     func configureWorkoutPlansDataSource() {
-        workoutsDataSource = WorkoutManagerDataSource(collectionView: workoutPlans) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-            
-            let reuseIdentifier: String
-            
-            switch indexPath.section {
-            case 0: reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
-            case 1: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
-            default: reuseIdentifier = MusleWorkoutsCollectionViewCell.identifier
-            }
-            
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return nil }
-            
-            guard let finalWorkouts = self.workouts?.workoutPlans  else {return cell}
-            
-            cell.setCellProperties(image: UIImage(named: "workout1")!, label: (finalWorkouts[indexPath.row].name))
+        self.workoutsDataSource = WorkoutManagerDataSource(collectionView: self.workoutPlansCollectionView) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
+            let reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
+            guard let workoutPlan = self.viewModel.workoutPlan(atIndex: indexPath.item) else { return UICollectionViewCell()}
+            cell.setCellProperties(workoutplan: workoutPlan)
             cell.styleCell()
             return cell
         }
-        
     }
     
     func applySnapShot(workoutPlans: [WorkoutPlan]) {
-        workoutSnapshot = WorkoutManagerSnapShot()
-        workoutSnapshot.appendSections([WorkoutManager.Section.workoutPlans])
-        workoutSnapshot.appendItems(workoutPlans)
-        workoutsDataSource.apply(workoutSnapshot,animatingDifferences: false)
-        
-    }
-    
-    func getWorkoutPlans() {
-        let url = Constants.baseURL?.appendingPathComponent("workout/")
-        URLSession.shared.makeRequest(url: url,method: .get, returnModel:WorkoutManager.self, completion: {
-            [weak self] result in
-            
-            switch result {
-            case .success(let workoutPlanData):
-                self?.workouts = workoutPlanData
-                DispatchQueue.main.async {
-                    guard let workouts = self?.workouts?.workoutPlans else { return }
-                    self?.applySnapShot(workoutPlans: workouts)
-                    self?.workoutPlans.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }})
+        self.workoutSnapshot = WorkoutManagerSnapShot()
+        self.workoutSnapshot.appendSections([WorkoutManager.Section.workoutPlans])
+        self.workoutSnapshot.appendItems(workoutPlans)
+        self.workoutsDataSource.apply(self.workoutSnapshot,animatingDifferences: false)
     }
 }

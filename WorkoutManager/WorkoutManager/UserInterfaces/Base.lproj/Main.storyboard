@@ -13,10 +13,10 @@
         <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="UserViewController" customModule="WorkoutManager" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZST-Uk-98K"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="86"/>
         </scene>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4eL-9a-Ri3">
-                                <rect key="frame" x="0.0" y="101" width="414" height="678"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bLs-oh-zlE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MusleWorkoutsCollectionViewCell" id="Ehb-22-tfr">
-                                        <rect key="frame" x="0.0" y="183.5" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="146" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zoB-Sq-3EV">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -63,7 +63,7 @@
                                 </cells>
                             </collectionView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJu-QC-M63">
-                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="pel-9C-q3F"/>
@@ -87,7 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="workoutPlans" destination="4eL-9a-Ri3" id="KaC-PQ-vVD"/>
+                        <outlet property="workoutPlansCollectionView" destination="4eL-9a-Ri3" id="KaC-PQ-vVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFn-Zz-B8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
