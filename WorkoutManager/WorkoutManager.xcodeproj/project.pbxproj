@@ -10,6 +10,9 @@
 		0B066C0E27D891100098D29A /* WorkoutManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0D27D891100098D29A /* WorkoutManagerViewController.swift */; };
 		0B066C1127D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B066C0F27D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift */; };
 		0B066C1227D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B066C1027D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib */; };
+		0B1C14C627F1B58F00295201 /* WorkoutPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C14C527F1B58F00295201 /* WorkoutPlansViewController.swift */; };
+		0B1C14C927F1D8D500295201 /* WorkoutPlanItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C14C727F1D8D500295201 /* WorkoutPlanItem.swift */; };
+		0B1C14CA27F1D8D500295201 /* WorkoutPlanItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1C14C827F1D8D500295201 /* WorkoutPlanItem.xib */; };
 		0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B45829F27C7600E00E074C6 /* Assets.xcassets */; };
 		0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4582A127C7600E00E074C6 /* UserModel.swift */; };
 		0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4582A327C7600E00E074C6 /* LaunchScreen.storyboard */; };
@@ -54,6 +57,9 @@
 		0B066C0D27D891100098D29A /* WorkoutManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManagerViewController.swift; sourceTree = "<group>"; };
 		0B066C0F27D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		0B066C1027D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutPlanCollectionViewCell.xib; sourceTree = "<group>"; };
+		0B1C14C527F1B58F00295201 /* WorkoutPlansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlansViewController.swift; sourceTree = "<group>"; };
+		0B1C14C727F1D8D500295201 /* WorkoutPlanItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanItem.swift; sourceTree = "<group>"; };
+		0B1C14C827F1D8D500295201 /* WorkoutPlanItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutPlanItem.xib; sourceTree = "<group>"; };
 		0B45829F27C7600E00E074C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B4582A127C7600E00E074C6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B4582A427C7600E00E074C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 			children = (
 				0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */,
 				0B066C0D27D891100098D29A /* WorkoutManagerViewController.swift */,
+				0B1C14C527F1B58F00295201 /* WorkoutPlansViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 				0B066C1027D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib */,
 				0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */,
 				0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */,
+				0B1C14C727F1D8D500295201 /* WorkoutPlanItem.swift */,
+				0B1C14C827F1D8D500295201 /* WorkoutPlanItem.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 				0B4582AC27C7600E00E074C6 /* Assets.xcassets in Resources */,
 				0B4582AF27C7600E00E074C6 /* Main.storyboard in Resources */,
 				0BD47C5827DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib in Resources */,
+				0B1C14CA27F1D8D500295201 /* WorkoutPlanItem.xib in Resources */,
 				0B4582AE27C7600E00E074C6 /* LaunchScreen.storyboard in Resources */,
 				0B066C1227D8A12F0098D29A /* WorkoutPlanCollectionViewCell.xib in Resources */,
 			);
@@ -422,12 +432,14 @@
 				0B4582BB27C7812700E074C6 /* WorkoutManagerModel.swift in Sources */,
 				0B4582B127C7600E00E074C6 /* URLSession+Extension.swift in Sources */,
 				0B4C972127EBAA7B00D31294 /* UiColourExtension.swift in Sources */,
+				0B1C14C627F1B58F00295201 /* WorkoutPlansViewController.swift in Sources */,
 				0B4582AD27C7600E00E074C6 /* UserModel.swift in Sources */,
 				0B066C1127D8A12F0098D29A /* WorkoutPlanCollectionViewCell.swift in Sources */,
 				0B4C971E27EB9DCA00D31294 /* LoginViewModel.swift in Sources */,
 				0B4C972827EC543800D31294 /* WorkoutManagerViewModel.swift in Sources */,
 				0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */,
 				0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */,
+				0B1C14C927F1D8D500295201 /* WorkoutPlanItem.swift in Sources */,
 				0BD47C4E27DF0C12006ABF5D /* Model.xcdatamodeld in Sources */,
 				0B4C972A27EC55C800D31294 /* WorkoutManagerRepository.swift in Sources */,
 			);

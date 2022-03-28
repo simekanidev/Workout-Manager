@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y4H-Z1-vuu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXF-U5-NG0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4eL-9a-Ri3">
-                                <rect key="frame" x="0.0" y="101" width="414" height="712"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="678"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bLs-oh-zlE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,7 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MusleWorkoutsCollectionViewCell" id="Ehb-22-tfr">
-                                        <rect key="frame" x="0.0" y="146" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="183.5" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zoB-Sq-3EV">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -63,7 +63,7 @@
                                 </cells>
                             </collectionView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJu-QC-M63">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="pel-9C-q3F"/>
@@ -231,6 +231,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEz-cS-2IR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16" y="-824"/>
+        </scene>
+        <!--Workout Plans View Controller-->
+        <scene sceneID="9Lm-g7-FGH">
+            <objects>
+                <viewController id="qXF-U5-NG0" customClass="WorkoutPlansViewController" customModule="WorkoutManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FSx-Kw-iO4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus consequat turpis sed imperdiet.Suspendisse efficitur dui " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm7-Yd-1SX">
+                                <rect key="frame" x="20" y="74" width="374" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="GZO-zw-aVs">
+                                <rect key="frame" x="132" y="155" width="150.5" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.26955782309999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.99650973081588745" blue="0.98604363203048706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eLh-Q1-YNV">
+                                <rect key="frame" x="20" y="201" width="374" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K2v-gh-byr">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="WorkoutPlanItem" id="4pC-7h-YDA">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R4B-nO-GBx">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ick-SG-Tvi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eLh-Q1-YNV" firstAttribute="leading" secondItem="Ick-SG-Tvi" secondAttribute="leading" constant="20" id="5CV-kP-8aS"/>
+                            <constraint firstItem="GZO-zw-aVs" firstAttribute="centerX" secondItem="FSx-Kw-iO4" secondAttribute="centerX" id="BhC-he-yuS"/>
+                            <constraint firstItem="Ick-SG-Tvi" firstAttribute="trailing" secondItem="eLh-Q1-YNV" secondAttribute="trailing" constant="20" id="JPB-HW-yYY"/>
+                            <constraint firstItem="GZO-zw-aVs" firstAttribute="top" secondItem="qm7-Yd-1SX" secondAttribute="bottom" constant="20" id="PEB-RS-b0V"/>
+                            <constraint firstItem="eLh-Q1-YNV" firstAttribute="top" secondItem="GZO-zw-aVs" secondAttribute="bottom" constant="20" id="XPK-0w-rCE"/>
+                            <constraint firstItem="Ick-SG-Tvi" firstAttribute="bottom" secondItem="eLh-Q1-YNV" secondAttribute="bottom" constant="20" id="XyI-cl-3GL"/>
+                            <constraint firstAttribute="trailing" secondItem="qm7-Yd-1SX" secondAttribute="trailing" constant="20" id="aID-np-p9D"/>
+                            <constraint firstItem="qm7-Yd-1SX" firstAttribute="leading" secondItem="Ick-SG-Tvi" secondAttribute="leading" constant="20" id="aJa-d9-zBm"/>
+                            <constraint firstItem="qm7-Yd-1SX" firstAttribute="top" secondItem="Ick-SG-Tvi" secondAttribute="top" constant="30" id="u2g-Cq-fSd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="workoutPlanInfo" destination="eLh-Q1-YNV" id="h9q-qB-O7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdr-r7-1t1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="-830.35714285714278"/>
         </scene>
     </scenes>
     <resources>

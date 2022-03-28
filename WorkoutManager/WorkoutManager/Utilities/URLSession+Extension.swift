@@ -9,7 +9,7 @@ import Foundation
 
 extension URLSession {
 
-    enum CustomError: String, Error{
+    enum CustomError: String, Error {
         case invalidResponse
         case invalidRequest
         case invalidBody
