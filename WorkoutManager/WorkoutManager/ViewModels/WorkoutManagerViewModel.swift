@@ -14,9 +14,9 @@ protocol WorkoutManagerDelegate : ViewModelDelegate {
 
 class WorkoutManagerViewModel {
     
-    var workoutPlansInfo: WorkoutManager?
-    weak var delegate: WorkoutManagerDelegate?
-    var repository: WorkoutManagerRepositoryType?
+    private var workoutPlansInfo: WorkoutManager?
+    private weak var delegate: WorkoutManagerDelegate?
+    private var repository: WorkoutManagerRepositoryType?
     
     init (delegate: WorkoutManagerDelegate, repository: WorkoutManagerRepositoryType) {
         self.delegate = delegate
