@@ -15,10 +15,12 @@ class WorkoutPlansViewController: UIViewController {
         workoutPlanInfo.delegate = self
         workoutPlanInfo.dataSource = self
         workoutPlanInfo.register(WorkoutPlanItem.nib(), forCellWithReuseIdentifier: WorkoutPlanItem.identifier)
+        workoutPlanInfo.backgroundColor = UIColor(named: "ContrastBackground")
+        workoutPlanInfo.layer.cornerRadius = CGFloat(15)
     }
 }
 
-extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -29,6 +31,10 @@ extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewD
             return UICollectionViewCell()
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       return CGSize(width: 370, height: 640)
     }
     
 }

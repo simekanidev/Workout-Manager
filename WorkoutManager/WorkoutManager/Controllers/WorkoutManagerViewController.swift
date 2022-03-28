@@ -81,9 +81,11 @@ extension WorkoutManagerViewController {
     
     func configureWorkoutPlansDataSource() {
         self.workoutsDataSource = WorkoutManagerDataSource(collectionView: self.workoutPlansCollectionView) { (collectionView:UICollectionView, indexPath:IndexPath, _:WorkoutPlan) -> UICollectionViewCell? in
-            let reuseIdentifier = WorkoutPlanCollectionViewCell.identifier
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
+            
             guard let workoutPlan = self.viewModel.workoutPlan(atIndex: indexPath.item) else { return UICollectionViewCell()}
+            
             cell.setCellProperties(workoutplan: workoutPlan)
             cell.styleCell()
             return cell

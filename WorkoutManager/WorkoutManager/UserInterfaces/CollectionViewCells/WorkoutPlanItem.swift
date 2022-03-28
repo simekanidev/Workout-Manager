@@ -8,8 +8,6 @@
 import UIKit
 
 class WorkoutPlanItem: UICollectionViewCell {
-
-    @IBOutlet weak var image: UIImageView!
     
     static var identifier = "WorkoutPlanItem"
     
