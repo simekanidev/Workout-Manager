@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias WorkoutPlansResult = (Result<WorkoutManager, Error>) -> Void
+typealias WorkoutPlansResult = (Result<WorkoutManager, URLSession.CustomError>) -> Void
 
 protocol WorkoutManagerRepositoryType:AnyObject {
     func fetchWorkoutPlans(completion: @escaping(WorkoutPlansResult))

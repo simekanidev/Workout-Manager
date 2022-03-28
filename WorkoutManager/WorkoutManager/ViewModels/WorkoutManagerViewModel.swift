@@ -32,13 +32,12 @@ class WorkoutManagerViewModel {
             switch result {
             case .success(let workoutManagerData):
                 self?.workoutPlansInfo = workoutManagerData
-                    guard let workoutPlans = self?.workoutPlansInfo?.workoutPlans else { return }
-                    let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
-                    self?.delegate?.applyScreenshot(workoutManager: workoutManger)
-                    self?.delegate?.reloadCollectionView()
+                guard let workoutPlans = self?.workoutPlansInfo?.workoutPlans else { return }
+                let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
+                self?.delegate?.applyScreenshot(workoutManager: workoutManger)
+                self?.delegate?.reloadCollectionView()
             case .failure(let error):
-                print(error)
+                self?.delegate?.showError(error:error.rawValue)
             }})
     }
-    
 }

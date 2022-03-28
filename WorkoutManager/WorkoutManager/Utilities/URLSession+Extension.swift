@@ -9,12 +9,13 @@ import Foundation
 
 extension URLSession {
 
-    enum CustomError: Error {
+    enum CustomError: String, Error{
         case invalidResponse
         case invalidRequest
         case invalidBody
         case invalidUrl
         case invalidData
+        case internalServerError
     }
 
     enum HttpMethod: String {
@@ -67,7 +68,7 @@ extension URLSession {
                                        returnModel: Generic.Type,
                                        paramters: [String: Any]? = nil,
                                        knownBody: Data? = nil,
-                                       completion: @escaping (Result<Generic, Error>) -> Void) {
+                                       completion: @escaping (Result<Generic, CustomError>) -> Void) {
 
         guard let endpointUrl = url else {
             DispatchQueue.main.async {
@@ -87,7 +88,7 @@ extension URLSession {
                     if let error = error {
                         
                         DispatchQueue.main.async {
-                            completion(.failure(error))
+                            completion(.failure(.internalServerError))
                         }
                     } else {
                         DispatchQueue.main.async {
@@ -105,7 +106,7 @@ extension URLSession {
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        completion(.failure(error))
+                        completion(.failure(CustomError.invalidData))
                     }
                 }
                 
@@ -120,7 +121,7 @@ extension URLSession {
             
         } catch {
             DispatchQueue.main.async {
-                completion(.failure(error))
+                completion(.failure(.internalServerError))
             }
             
         }
