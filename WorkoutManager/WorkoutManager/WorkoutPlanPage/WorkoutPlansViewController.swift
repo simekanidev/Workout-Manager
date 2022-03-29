@@ -12,8 +12,17 @@ class WorkoutPlansViewController: UIViewController {
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    private var currentPage = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
+    }
+}
+
+extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    private func configureCollectionView() {
         workoutPlanInfo.delegate = self
         workoutPlanInfo.dataSource = self
         workoutPlanInfo.register(WorkoutPlanItem.nib(), forCellWithReuseIdentifier: WorkoutPlanItem.identifier)
@@ -21,10 +30,6 @@ class WorkoutPlansViewController: UIViewController {
         workoutPlanInfo.layer.cornerRadius = CGFloat(15)
     }
     
-    private var currentPage = 0
-}
-
-extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }

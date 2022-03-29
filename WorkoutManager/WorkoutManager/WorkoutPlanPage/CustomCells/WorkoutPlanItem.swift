@@ -10,15 +10,10 @@ import UIKit
 class WorkoutPlanItem: UICollectionViewCell {
 
     @IBOutlet private var workoutsTableView:UITableView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        workoutsTableView.register(WorkoutInfoTableViewCell.nib(), forCellReuseIdentifier: WorkoutInfoTableViewCell.identifier)
-        
-        workoutsTableView.delegate = self
-        workoutsTableView.dataSource = self
-        workoutsTableView.backgroundColor = .secondaryColour
+        configureTableView()
     }
     
     static var identifier = "WorkoutPlanItem"
@@ -39,5 +34,12 @@ extension WorkoutPlanItem: UITableViewDelegate, UITableViewDataSource {
         }
         cell.backgroundColor = .secondaryColour
         return cell
+    }
+    
+    private func configureTableView() {
+        workoutsTableView.register(WorkoutInfoTableViewCell.nib(), forCellReuseIdentifier: WorkoutInfoTableViewCell.identifier)
+        workoutsTableView.delegate = self
+        workoutsTableView.dataSource = self
+        workoutsTableView.backgroundColor = .secondaryColour
     }
 }
