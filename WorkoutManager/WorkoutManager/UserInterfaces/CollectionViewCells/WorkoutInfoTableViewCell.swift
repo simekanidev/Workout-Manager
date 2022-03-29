@@ -9,10 +9,11 @@ import UIKit
 
 class WorkoutInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var workoutImage: UIImageView!
     static var identifier = "WorkoutInfoTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        workoutImage.layer.cornerRadius = 15
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

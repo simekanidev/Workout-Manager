@@ -10,6 +10,8 @@ import UIKit
 class WorkoutPlansViewController: UIViewController {
     
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         workoutPlanInfo.delegate = self
@@ -18,6 +20,8 @@ class WorkoutPlansViewController: UIViewController {
         workoutPlanInfo.backgroundColor = UIColor(named: "ContrastBackground")
         workoutPlanInfo.layer.cornerRadius = CGFloat(15)
     }
+    
+    private var currentPage = 0
 }
 
 extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -37,4 +41,9 @@ extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewD
        return CGSize(width: 370, height: 640)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentPage = Int(scrollView.contentOffset.x/width)
+        pageControl.currentPage = currentPage
+    }
 }

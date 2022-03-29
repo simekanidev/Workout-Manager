@@ -10,4 +10,5 @@ import UIKit
 
 extension UIColor {
     static var primaryColour  = UIColor(named: "Primary Colour")?.cgColor
+    static var secondaryColour = UIColor(named: "ContrastBackground")
 }
