@@ -17,7 +17,7 @@ class WorkoutPlansViewController: UIViewController {
         workoutPlanInfo.delegate = self
         workoutPlanInfo.dataSource = self
         workoutPlanInfo.register(WorkoutPlanItem.nib(), forCellWithReuseIdentifier: WorkoutPlanItem.identifier)
-        workoutPlanInfo.backgroundColor = UIColor(named: "ContrastBackground")
+        workoutPlanInfo.backgroundColor = .secondaryColour
         workoutPlanInfo.layer.cornerRadius = CGFloat(15)
     }
     

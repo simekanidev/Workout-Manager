@@ -10,16 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="UserViewController" customModule="WorkoutManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZST-Uk-98K"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1620" y="86"/>
-        </scene>
         <!--Workout Manager View Controller-->
         <scene sceneID="QB7-pL-kuH">
             <objects>

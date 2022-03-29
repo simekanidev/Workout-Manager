@@ -26,7 +26,6 @@ class WorkoutPlanItem: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "WorkoutPlanItem", bundle: nil)
     }
-
 }
 
 extension WorkoutPlanItem: UITableViewDelegate, UITableViewDataSource {
@@ -41,5 +40,4 @@ extension WorkoutPlanItem: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .secondaryColour
         return cell
     }
-    
 }
