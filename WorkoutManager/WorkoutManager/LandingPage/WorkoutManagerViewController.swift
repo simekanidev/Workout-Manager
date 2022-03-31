@@ -19,7 +19,6 @@ class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
     private lazy var viewModel = WorkoutManagerViewModel(delegate: self,repository: WorkoutManagerRepository())
     override func viewDidLoad() {
         super.viewDidLoad()
-        workoutPlansCollectionView.delegate = self
         configureCollectionView()
         viewModel.getWorkoutPlans()
     }
@@ -69,6 +68,17 @@ extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionVi
                                             forCellWithReuseIdentifier: WorkoutPlanCollectionViewCell.identifier)
         workoutPlansCollectionView.dataSource = self
         workoutPlansCollectionView.delegate = self
-    }
         
+        workoutPlansCollectionView.collectionViewLayout = configureCollectionViewLayout()
+    }
+}
+
+extension WorkoutManagerViewController: UICollectionViewDelegateFlowLayout {
+    private func configureCollectionViewLayout() -> UICollectionViewFlowLayout {
+          let layout = UICollectionViewFlowLayout()
+          layout.itemSize = CGSize(width: 230, height: 370)
+          layout.scrollDirection = .horizontal
+          layout.minimumLineSpacing = CGFloat(40)
+          return layout
+      }
 }

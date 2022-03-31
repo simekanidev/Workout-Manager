@@ -21,7 +21,7 @@ class WorkoutPlansViewController: UIViewController {
     }
 }
 
-extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     
     private func configureCollectionView() {
         workoutPlanInfo.delegate = self
