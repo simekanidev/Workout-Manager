@@ -12,6 +12,7 @@ class WorkoutPlansViewController: UIViewController {
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    static var indentifier = "WorkoutPlansViewController"
     private var currentPage = 0
     
     override func viewDidLoad() {

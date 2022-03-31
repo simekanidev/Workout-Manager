@@ -9,7 +9,6 @@ import Foundation
 
 protocol WorkoutManagerDelegate : ViewModelDelegate {
     func reloadCollectionView()
-    func applyScreenshot(workoutManager:WorkoutManager)
 }
 
 class WorkoutManagerViewModel {
@@ -27,6 +26,10 @@ class WorkoutManagerViewModel {
         return workoutPlansInfo?.workoutPlans[atIndex] ?? nil
     }
     
+    var workoutPlansCount: Int {
+        return workoutPlansInfo?.workoutPlans.count ?? 0
+    }
+    
     func getWorkoutPlans() {
         repository?.fetchWorkoutPlans(completion: { [weak self] result in
             switch result {
@@ -34,7 +37,6 @@ class WorkoutManagerViewModel {
                 self?.workoutPlansInfo = workoutManagerData
                 guard let workoutPlans = self?.workoutPlansInfo?.workoutPlans else { return }
                 let workoutManger = WorkoutManager(workoutPlans: workoutPlans)
-                self?.delegate?.applyScreenshot(workoutManager: workoutManger)
                 self?.delegate?.reloadCollectionView()
             case .failure(let error):
                 self?.delegate?.showError(error:error.rawValue)
