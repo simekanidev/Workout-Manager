@@ -14,6 +14,7 @@ class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
     static let identifier = "WorkoutManagerViewController"
     
     private lazy var viewModel = WorkoutManagerViewModel(delegate: self,repository: WorkoutManagerRepository())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -32,7 +33,7 @@ extension WorkoutManagerViewController {
         // will implement for upcoming feature
     }
     
-    func navigateToPage(itemIndex:Int?) {
+    func navigateToPage(itemIndex:Int?){
         let workoutPlanIndex:Int
         workoutPlanIndex = (itemIndex != nil) ? itemIndex! : 0
         
