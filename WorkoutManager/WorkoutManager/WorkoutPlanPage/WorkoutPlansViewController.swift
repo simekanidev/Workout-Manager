@@ -10,7 +10,7 @@ import UIKit
 class WorkoutPlansViewController: UIViewController {
     
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     static var indentifier = "WorkoutPlansViewController"
     fileprivate func configureCollectionView() {
