@@ -42,4 +42,8 @@ class WorkoutManagerViewModel {
                 self?.delegate?.showError(error:error.rawValue)
             }})
     }
+    
+    func openWorkoutPlan() {
+        self.delegate?.navigateToPage()
+    }
 }

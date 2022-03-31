@@ -41,5 +41,6 @@ extension WorkoutPlanItem: UITableViewDelegate, UITableViewDataSource {
         workoutsTableView.delegate = self
         workoutsTableView.dataSource = self
         workoutsTableView.backgroundColor = .secondaryColour
+        
     }
 }

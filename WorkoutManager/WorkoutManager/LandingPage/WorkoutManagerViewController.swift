@@ -7,9 +7,6 @@
 
 import UIKit
 
-typealias WorkoutManagerDataSource = UICollectionViewDiffableDataSource<WorkoutManager.Section, WorkoutPlan>
-typealias WorkoutManagerSnapShot = NSDiffableDataSourceSnapshot<WorkoutManager.Section,WorkoutPlan>
-
 class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
     
     @IBOutlet private var workoutPlansCollectionView : UICollectionView!
@@ -28,6 +25,7 @@ class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
 extension WorkoutManagerViewController {
     func reloadCollectionView() {
         self.workoutPlansCollectionView.reloadData()
+        
     }
 
     func showError(error: String) {
@@ -56,10 +54,14 @@ extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionVi
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutPlanCollectionViewCell.identifier, for: indexPath) as? WorkoutPlanCollectionViewCell else { return UICollectionViewCell() }
         
         guard let workoutPlan = self.viewModel.workoutPlan(atIndex: indexPath.item) else { return UICollectionViewCell()}
-        
+       
         cell.setCellProperties(workoutplan: workoutPlan)
         cell.styleCell()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.openWorkoutPlan()
     }
     
     fileprivate func configureCollectionView() {
