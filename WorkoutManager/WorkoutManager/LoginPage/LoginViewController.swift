@@ -35,7 +35,8 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 extension LoginViewController:ViewModelDelegate {
-    func navigateToPage() {
+    
+    func navigateToPage(itemIndex: Int?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyboard
             .instantiateViewController(withIdentifier: WorkoutManagerViewController.identifier) as?

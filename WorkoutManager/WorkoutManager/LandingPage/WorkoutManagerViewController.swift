@@ -32,12 +32,15 @@ extension WorkoutManagerViewController {
         // will implement for upcoming feature
     }
     
-    func navigateToPage() {
+    func navigateToPage(itemIndex:Int?) {
+        let workoutPlanIndex:Int
+        workoutPlanIndex = (itemIndex != nil) ? itemIndex! : 0
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyboard
             .instantiateViewController(withIdentifier: WorkoutPlansViewController.indentifier) as?
             WorkoutPlansViewController {
-            viewController.navigationItem.title = "Workout A"
+            viewController.navigationItem.title = self.viewModel.workoutPlan(atIndex: workoutPlanIndex)?.name
             self.navigationController?.pushViewController(viewController, animated: false)
         }
     }
@@ -61,7 +64,7 @@ extension WorkoutManagerViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.openWorkoutPlan()
+        viewModel.openWorkoutPlan(workoutPlanIndex: indexPath.item)
     }
     
     fileprivate func configureCollectionView() {

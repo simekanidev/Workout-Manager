@@ -43,7 +43,7 @@ class WorkoutManagerViewModel {
             }})
     }
     
-    func openWorkoutPlan() {
-        self.delegate?.navigateToPage()
+    func openWorkoutPlan(workoutPlanIndex: Int) {
+        self.delegate?.navigateToPage(itemIndex: workoutPlanIndex)
     }
 }
