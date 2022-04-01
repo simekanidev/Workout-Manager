@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
+class WorkoutManagerViewController:UIViewController {
     
     @IBOutlet private var workoutPlansCollectionView : UICollectionView!
     
@@ -23,7 +23,7 @@ class WorkoutManagerViewController:UIViewController, WorkoutManagerDelegate {
 }
 
 // MARK: Workout Manager Delegate
-extension WorkoutManagerViewController {
+extension WorkoutManagerViewController : WorkoutManagerDelegate {
     func reloadCollectionView() {
         self.workoutPlansCollectionView.reloadData()
         
@@ -33,7 +33,7 @@ extension WorkoutManagerViewController {
         // will implement for upcoming feature
     }
     
-    func navigateToPage(itemIndex:Int?){
+    func navigateToPage(itemIndex:Int?) {
         let workoutPlanIndex:Int
         workoutPlanIndex = (itemIndex != nil) ? itemIndex! : 0
         
