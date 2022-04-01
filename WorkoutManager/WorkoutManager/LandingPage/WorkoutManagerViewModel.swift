@@ -17,7 +17,8 @@ class WorkoutManagerViewModel {
     private weak var delegate: WorkoutManagerDelegate?
     private var repository: WorkoutManagerRepositoryType?
     
-    init (delegate: WorkoutManagerDelegate, repository: WorkoutManagerRepositoryType) {
+    init (delegate: WorkoutManagerDelegate,
+          repository: WorkoutManagerRepositoryType) {
         self.delegate = delegate
         self.repository = repository
     }
