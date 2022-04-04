@@ -9,7 +9,7 @@ import Foundation
 
 protocol ViewModelDelegate:AnyObject {
     func showError(error:String)
-    func navigateToPage()
+    func navigateToPage(itemIndex:Int?)
 }
 
 class LoginViewModel {
@@ -21,7 +21,7 @@ class LoginViewModel {
     
     func loginUser(with username: String, and password:String) {
         self.checkLoginDetails(username: username, password: password)
-        ? delegate?.navigateToPage() : delegate?.showError(error: "Incorrect Login Details")
+        ? delegate?.navigateToPage(itemIndex : nil) : delegate?.showError(error: "Incorrect Login Details")
     }
     
     private func checkLoginDetails(username:String, password:String) -> Bool {
