@@ -16,7 +16,7 @@ class WorkoutManagerViewModel {
     private var workoutPlansInfo: WorkoutManager?
     private weak var delegate: WorkoutManagerDelegate?
     private var repository: WorkoutManagerRepositoryType?
-    
+    private var workoutPlan: WorkoutPlan?
     init (delegate: WorkoutManagerDelegate,
           repository: WorkoutManagerRepositoryType) {
         self.delegate = delegate
@@ -46,5 +46,9 @@ class WorkoutManagerViewModel {
     
     func openWorkoutPlan(workoutPlanIndex: Int) {
         self.delegate?.navigateToPage(itemIndex: workoutPlanIndex)
+    }
+    
+    func workoutPlanId(id: Int) {
+        workoutPlan?.id = id
     }
 }

@@ -42,6 +42,7 @@ extension WorkoutManagerViewController : WorkoutManagerDelegate {
             .instantiateViewController(withIdentifier: WorkoutPlansViewController.indentifier) as?
             WorkoutPlansViewController {
             viewController.navigationItem.title = self.viewModel.workoutPlan(atIndex: workoutPlanIndex)?.name
+            viewController.setWorkoutPlan(workoutPlan: (self.viewModel.workoutPlan(atIndex: workoutPlanIndex)!))
             self.navigationController?.pushViewController(viewController, animated: false)
         }
     }
