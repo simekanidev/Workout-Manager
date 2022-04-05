@@ -24,7 +24,7 @@ class LoginViewModel {
         ? delegate?.navigateToPage(itemIndex : nil) : delegate?.showError(error: "Incorrect Login Details")
     }
     
-    private func checkLoginDetails(username:String, password:String) -> Bool {
-        return username != "Admin" && password != "TestPass123"
+    func checkLoginDetails(username:String, password:String) -> Bool {
+        return username == "Admin" && password == "TestPass123"
     }
 }
