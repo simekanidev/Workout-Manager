@@ -32,6 +32,8 @@
 		0B6E9CF427F2FC200040E2A5 /* WorkoutInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E9CF227F2FC200040E2A5 /* WorkoutInfoTableViewCell.swift */; };
 		0B6E9CF527F2FC200040E2A5 /* WorkoutInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E9CF327F2FC200040E2A5 /* WorkoutInfoTableViewCell.xib */; };
 		0B6E9D0327FC903F0040E2A5 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E9D0227FC903F0040E2A5 /* LoginTests.swift */; };
+		0B6E9D0627FD9B090040E2A5 /* LandingPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E9D0527FD9B090040E2A5 /* LandingPageTests.swift */; };
+		0B6E9D0827FDA40A0040E2A5 /* MockRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E9D0727FDA40A0040E2A5 /* MockRepositories.swift */; };
 		0BD47C5027DF0F03006ABF5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */; };
 		0BD47C5727DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */; };
 		0BD47C5827DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */; };
@@ -84,6 +86,8 @@
 		0B6E9CF227F2FC200040E2A5 /* WorkoutInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoTableViewCell.swift; sourceTree = "<group>"; };
 		0B6E9CF327F2FC200040E2A5 /* WorkoutInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutInfoTableViewCell.xib; sourceTree = "<group>"; };
 		0B6E9D0227FC903F0040E2A5 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		0B6E9D0527FD9B090040E2A5 /* LandingPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageTests.swift; sourceTree = "<group>"; };
+		0B6E9D0727FDA40A0040E2A5 /* MockRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositories.swift; sourceTree = "<group>"; };
 		0BD47C4F27DF0F03006ABF5D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BD47C5527DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusleWorkoutsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BD47C5627DF7922006ABF5D /* MusleWorkoutsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusleWorkoutsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		0B6AE4B927C6783800186185 /* WorkoutManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				0B6E9D0427FD9A830040E2A5 /* LandingPageTests */,
 				0B6E9D0127FC90110040E2A5 /* LoginTests */,
 				0B6AE4BA27C6783800186185 /* WorkoutManagerTests.swift */,
 			);
@@ -291,6 +296,15 @@
 				0B6E9D0227FC903F0040E2A5 /* LoginTests.swift */,
 			);
 			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		0B6E9D0427FD9A830040E2A5 /* LandingPageTests */ = {
+			isa = PBXGroup;
+			children = (
+				0B6E9D0527FD9B090040E2A5 /* LandingPageTests.swift */,
+				0B6E9D0727FDA40A0040E2A5 /* MockRepositories.swift */,
+			);
+			path = LandingPageTests;
 			sourceTree = "<group>";
 		};
 		0BD47C5127DF6C8B006ABF5D /* CustomCells */ = {
@@ -486,6 +500,8 @@
 			files = (
 				0B6AE4BB27C6783800186185 /* WorkoutManagerTests.swift in Sources */,
 				0B6E9D0327FC903F0040E2A5 /* LoginTests.swift in Sources */,
+				0B6E9D0627FD9B090040E2A5 /* LandingPageTests.swift in Sources */,
+				0B6E9D0827FDA40A0040E2A5 /* MockRepositories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

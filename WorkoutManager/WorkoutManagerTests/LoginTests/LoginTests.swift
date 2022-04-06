@@ -11,7 +11,7 @@ import XCTest
 class LoginTests: XCTestCase {
     
     private var viewModel: LoginViewModel!
-    private var mockViewModelDelegate:MockViewModelDelegate!
+    private weak var mockViewModelDelegate:MockViewModelDelegate!
 
     override func setUp() {
         super.setUp()
@@ -19,20 +19,28 @@ class LoginTests: XCTestCase {
         self.viewModel = LoginViewModel(delegate: MockViewModelDelegate())
     }
     
+    func checkLoginDetailsPass() {
+        XCTAssertTrue(viewModel.checkLoginDetails(username: "Admin", password: "TestPass123"))
+    }
+    func checkLoginDetailsFail() {
+        XCTAssertTrue(viewModel.checkLoginDetails(username: "Admin", password: "TestPas"))
+    }
+    
     func testLoginPass() {
         XCTAssertTrue(viewModel.checkLoginDetails(username: "Admin", password: "TestPass123"))
     }
     func testLoginFail() {
-        XCTAssertTrue(viewModel.checkLoginDetails(username: "Admin", password: "TestPas"))
+        viewModel.loginUser(with: "ASdf", and: "afsdf")
     }
     
     class MockViewModelDelegate: ViewModelDelegate {
+        
         func showError(error: String) {
-            print("Show Error")
+            
         }
         
         func navigateToPage(itemIndex: Int?) {
-            print("Navigating to page")
+            
         }
     }
 

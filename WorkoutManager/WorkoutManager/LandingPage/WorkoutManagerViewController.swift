@@ -18,7 +18,7 @@ class WorkoutManagerViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        viewModel.getWorkoutPlans()
+        viewModel.getWorkoutPlansFromApi()
     }
 }
 
