@@ -1,4 +1,4 @@
-# Workout-Manager
+# Workout-Manager [![Build Status](https://app.bitrise.io/app/fd3787471e739985/status.svg?token=YSANg8XgQhPCBDvIHmiaUQ&branch=main)](https://app.bitrise.io/app/fd3787471e739985)
 
 <div id="top"></div>
 
