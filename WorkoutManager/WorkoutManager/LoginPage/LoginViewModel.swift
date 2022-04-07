@@ -14,7 +14,7 @@ protocol ViewModelDelegate:AnyObject {
 
 class LoginViewModel {
     private weak var delegate: ViewModelDelegate?
-    
+
     init(delegate:ViewModelDelegate) {
         self.delegate = delegate
     }

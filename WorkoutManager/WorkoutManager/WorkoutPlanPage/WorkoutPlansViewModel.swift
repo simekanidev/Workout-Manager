@@ -13,15 +13,33 @@ protocol WorkoutPlansDelegate : ViewModelDelegate {
 
 class WorkoutPlansViewModel {
     
-    weak var delegate: ViewModelDelegate?
-    var workoutPlan: WorkoutPlan?
+    private weak var delegate: ViewModelDelegate?
+    private var repository: WorkoutPlansRepositoryType?
     
-    init(delegate:ViewModelDelegate) {
+    var workoutPlan: WorkoutPlan?
+    var workoutPlanInfo: WorkoutPlanDetails?
+    
+    init(delegate:ViewModelDelegate, repository: WorkoutPlansRepositoryType) {
         self.delegate = delegate
+        self.repository = repository
     }
     
     func setWorkoutPlan(workoutPlan:WorkoutPlan) {
         self.workoutPlan = workoutPlan
     }
     
+    func getWorkoutPlanDetails() {
+        
+        guard let id = workoutPlan?.id else {return}
+        
+        repository?.getWorkoutPlanById(id: id,completion: { [weak self] result in
+            switch result {
+            case .success(let workoutPlanDetails):
+                self?.workoutPlanInfo = workoutPlanDetails
+            case .failure(let error):
+                self?.delegate?.showError(error: error.rawValue)
+            }
+            
+        })
+    }
 }

@@ -19,9 +19,10 @@ class WorkoutPlansViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         populateData()
+        viewModel.getWorkoutPlanDetails()
     }
     
-    private lazy var viewModel = WorkoutPlansViewModel(delegate: self)
+    private lazy var viewModel = WorkoutPlansViewModel(delegate: self, repository: WorkoutPlansRepository())
     private var currentPage = 0
 }
 
@@ -37,7 +38,6 @@ extension WorkoutPlansViewController {
     private func populateData() {
         descriptionText.text = viewModel.workoutPlan?.description
     }
-    
 }
 
 extension WorkoutPlansViewController: ViewModelDelegate {
