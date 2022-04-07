@@ -40,7 +40,7 @@ extension WorkoutPlansViewController {
     }
 }
 
-extension WorkoutPlansViewController: ViewModelDelegate {
+extension WorkoutPlansViewController: WorkoutPlansDelegate {
     func showError(error: String) {
         // will add code
     }
@@ -52,12 +52,17 @@ extension WorkoutPlansViewController: ViewModelDelegate {
     func setWorkoutPlan(workoutPlan: WorkoutPlan) {
         viewModel.setWorkoutPlan(workoutPlan: workoutPlan)
     }
+    
+    func reloadCollectionView() {
+        self.workoutPlanInfo.reloadData()
+        
+    }
 }
 
 extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.numberOfDays
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
