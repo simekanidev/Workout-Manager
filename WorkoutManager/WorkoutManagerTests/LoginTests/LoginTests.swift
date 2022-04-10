@@ -22,19 +22,23 @@ class LoginTests: XCTestCase {
     func testLoginPass() {
        viewModel.loginUser(with: "Admin", and: "TestPass123")
         XCTAssertTrue(mockViewModel.navigateToPageCalled)
+        XCTAssertFalse(mockViewModel.showErrorCalled)
     }
     func testLoginIncorrectUsernameAndPassword() {
         viewModel.loginUser(with: "ASdf", and: "afsdf")
         XCTAssertFalse(mockViewModel.navigateToPageCalled)
+        XCTAssertTrue(mockViewModel.showErrorCalled)
     }
     
     func testLoginIncorrectPassword() {
        viewModel.loginUser(with: "Admin", and: "TestPass12")
         XCTAssertFalse(mockViewModel.navigateToPageCalled)
+        XCTAssertTrue(mockViewModel.showErrorCalled)
     }
     func testLoginIncorrectUsername() {
         viewModel.loginUser(with: "Adm", and: "TestPass12")
         XCTAssertFalse(mockViewModel.navigateToPageCalled)
+        XCTAssertTrue(mockViewModel.showErrorCalled)
     }
     
     class MockViewModelDelegate: ViewModelDelegate {
@@ -48,5 +52,4 @@ class LoginTests: XCTestCase {
             navigateToPageCalled = true
         }
     }
-
 }
