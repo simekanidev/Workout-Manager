@@ -11,10 +11,13 @@ import XCTest
 class LandingPageTests: XCTestCase {
     
     var viewModel: WorkoutManagerViewModel!
+    var mockDelegate: MockWorkoutMangerDelegate!
 
     override func setUp() {
         super.setUp()
-        viewModel = WorkoutManagerViewModel(delegate: MockWorkoutMangerDelegate(),
+        
+        mockDelegate = MockWorkoutMangerDelegate()
+        viewModel = WorkoutManagerViewModel(delegate: mockDelegate,
                                             repository: MockWorkoutManagerRepository())
         viewModel.getWorkoutPlansFromApi()
     }
@@ -50,17 +53,40 @@ class LandingPageTests: XCTestCase {
    }
     
     class MockWorkoutMangerDelegate: WorkoutManagerDelegate {
+        
+        var reloadCalled = false
+        var showErrorCalled = false
+        var navigateToPageCalled = false
+        
         func reloadCollectionView() {
-            
+            reloadCalled = true
         }
         
         func showError(error: String) {
-            
+            showErrorCalled = false
         }
         
         func navigateToPage(itemIndex: Int?) {
-            
+            navigateToPageCalled = true
+        } 
+    }
+    
+     class MockWorkoutManagerRepository:WorkoutManagerRepositoryType {
+        
+        let mockWorkoutManager = WorkoutManager(workoutPlans:
+                                                    [WorkoutPlan(id: 1, name: "", description: ""),
+                                                     WorkoutPlan(id: 2, name: "", description: ""),
+                                                     WorkoutPlan(id: 3, name: "", description: "")])
+        
+         func fetchWorkoutPlans(completion: @escaping (WorkoutPlansResult)) {
+            let workoutManager: WorkoutManager = mockWorkoutManager
+            completion(.success(workoutManager))
         }
     }
 
+     class MockWorkoutManagerRepositoryFail:WorkoutManagerRepositoryType {
+         func fetchWorkoutPlans(completion: @escaping (WorkoutPlansResult)) {
+            completion(.failure(.invalidData))
+        }
+    }
 }
