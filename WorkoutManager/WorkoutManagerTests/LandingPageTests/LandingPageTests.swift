@@ -11,7 +11,7 @@ import XCTest
 class LandingPageTests: XCTestCase {
     
     var viewModel: WorkoutManagerViewModel!
-    var mockDelegate: MockWorkoutMangerDelegate!
+    weak var mockDelegate: MockWorkoutMangerDelegate!
 
     override func setUp() {
         super.setUp()

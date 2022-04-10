@@ -11,27 +11,30 @@ import XCTest
 class LoginTests: XCTestCase {
     
     private var viewModel: LoginViewModel!
-    private var mockViewModelDelegate:MockViewModelDelegate!
+    private var mockViewModel:MockViewModelDelegate!
 
     override func setUp() {
         super.setUp()
-        mockViewModelDelegate = MockViewModelDelegate()
-        self.viewModel = LoginViewModel(delegate: mockViewModelDelegate)
-    }
-    
-    func checkLoginDetailsPass() {
-        viewModel.loginUser(with: "Admin", and: "TestPass123")
-        
-    }
-    func checkLoginDetailsFail() {
-        viewModel.loginUser(with: "Admin", and: "TestPas")
+        mockViewModel = MockViewModelDelegate()
+        self.viewModel = LoginViewModel(delegate: mockViewModel)
     }
     
     func testLoginPass() {
        viewModel.loginUser(with: "Admin", and: "TestPass123")
+        XCTAssertTrue(mockViewModel.navigateToPageCalled)
     }
-    func testLoginFail() {
+    func testLoginIncorrectUsernameAndPassword() {
         viewModel.loginUser(with: "ASdf", and: "afsdf")
+        XCTAssertFalse(mockViewModel.navigateToPageCalled)
+    }
+    
+    func testLoginIncorrectPassword() {
+       viewModel.loginUser(with: "Admin", and: "TestPass12")
+        XCTAssertFalse(mockViewModel.navigateToPageCalled)
+    }
+    func testLoginIncorrectUsername() {
+        viewModel.loginUser(with: "Adm", and: "TestPass12")
+        XCTAssertFalse(mockViewModel.navigateToPageCalled)
     }
     
     class MockViewModelDelegate: ViewModelDelegate {
@@ -42,7 +45,7 @@ class LoginTests: XCTestCase {
         }
         
         func navigateToPage(itemIndex: Int?) {
-            showErrorCalled = false
+            navigateToPageCalled = true
         }
     }
 
