@@ -34,7 +34,7 @@ class WorkoutManagerViewModel {
     func getworkoutPlansData() -> [WorkoutPlan]? {
         return workoutManagerData?.workoutPlans
     }
-    //MARK: API Call
+  
     func getWorkoutPlansFromApi() {
         repository?.fetchWorkoutPlans(completion: { [weak self] result in
             switch result {
