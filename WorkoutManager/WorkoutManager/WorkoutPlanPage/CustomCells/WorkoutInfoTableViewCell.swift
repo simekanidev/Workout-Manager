@@ -10,6 +10,7 @@ import UIKit
 class WorkoutInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var workoutImage: UIImageView!
+    
     static var identifier = "WorkoutInfoTableViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +24,6 @@ class WorkoutInfoTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+    
+    
 }

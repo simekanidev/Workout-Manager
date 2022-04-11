@@ -70,6 +70,10 @@ extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewD
             withReuseIdentifier: WorkoutPlanItem.identifier, for: indexPath) as? WorkoutPlanItem else {
             return UICollectionViewCell()
         }
+        guard let workoutDay = viewModel.getWorkoutInfo(itemIndex: indexPath.item) else{
+            return cell
+        }
+        cell.setData(day: workoutDay)
         return cell
     }
     

@@ -103,6 +103,8 @@
             </constraints>
             <size key="customSize" width="370" height="593"/>
             <connections>
+                <outlet property="Title" destination="4X7-6W-AAZ" id="bCQ-hO-TVe"/>
+                <outlet property="numberOfExersices" destination="qZq-Tc-79m" id="QGW-Bu-8rd"/>
                 <outlet property="workoutsTableView" destination="iDn-rD-bKt" id="Cqm-oq-bnW"/>
             </connections>
             <point key="canvasLocation" x="971.01449275362324" y="183.81696428571428"/>

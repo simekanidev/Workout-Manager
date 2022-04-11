@@ -32,6 +32,10 @@ class WorkoutPlansViewModel {
         return workoutPlanInfo?.days?.count ?? 0
     }
     
+    public func getWorkoutInfo(itemIndex:Int)->Day?{
+        return workoutPlanInfo?.days?[itemIndex] ?? nil
+    }
+    
     func getWorkoutPlanDetails() {
         guard let id = workoutPlan?.id else {return}
         repository?.getWorkoutPlanById(id: id,completion: { [weak self] result in

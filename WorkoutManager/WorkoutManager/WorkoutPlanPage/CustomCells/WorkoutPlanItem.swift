@@ -11,6 +11,9 @@ class WorkoutPlanItem: UICollectionViewCell {
 
     @IBOutlet private var workoutsTableView:UITableView!
     
+    @IBOutlet private weak var Title: UILabel!
+    @IBOutlet weak var numberOfExersices: UILabel!
+    private var workoutDay: Day?
     override func awakeFromNib() {
         super.awakeFromNib()
         configureTableView()
@@ -20,6 +23,10 @@ class WorkoutPlanItem: UICollectionViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: "WorkoutPlanItem", bundle: nil)
+    }
+    
+    public func setData(day: Day){
+        self.workoutDay = day
     }
 }
 
