@@ -25,7 +25,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="7RD-Rz-e4G">
                         <rect key="frame" x="150" y="7" width="136.5" height="76"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-62-ANg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-62-ANg">
                                 <rect key="frame" x="0.0" y="0.0" width="124.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -84,6 +84,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="exersiceName" destination="bcK-62-ANg" id="DcO-79-qwQ"/>
+                <outlet property="numberOfReps" destination="fyj-yQ-7xU" id="4bu-8L-cfI"/>
+                <outlet property="numberOfSets" destination="6ux-f5-mSW" id="M0R-Ex-tDn"/>
                 <outlet property="workoutImage" destination="mzN-NF-sA6" id="67C-9j-lU6"/>
             </connections>
             <point key="canvasLocation" x="129.71014492753625" y="92.410714285714278"/>

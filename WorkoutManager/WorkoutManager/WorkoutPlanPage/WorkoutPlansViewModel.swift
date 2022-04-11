@@ -32,7 +32,7 @@ class WorkoutPlansViewModel {
         return workoutPlanInfo?.days?.count ?? 0
     }
     
-    public func getWorkoutInfo(itemIndex:Int)->Day?{
+    public func getWorkoutInfo(itemIndex:Int) -> Day? {
         return workoutPlanInfo?.days?[itemIndex] ?? nil
     }
     
@@ -42,9 +42,9 @@ class WorkoutPlansViewModel {
             switch result {
             case .success(let workoutPlanDetails):
                 self?.workoutPlanInfo = workoutPlanDetails
+                self?.delegate?.reloadCollectionView()
             case .failure(let error):
                 self?.delegate?.showError(error: error.rawValue)
-                self?.delegate?.reloadCollectionView()
             }
         })
     }
