@@ -19,7 +19,7 @@ class LandingPageTests: XCTestCase {
         mockdelegat = MockWorkoutMangerDelegate()
         viewModel = WorkoutManagerViewModel(delegate: mockdelegat,
                                             repository: MockWorkoutManagerRepository())
-        viewModel.getWorkoutPlansFromApi()
+        
     }
     
     func failedToRetrieveWorkoutPlans() {
@@ -29,11 +29,21 @@ class LandingPageTests: XCTestCase {
         viewModel.getWorkoutPlansFromApi()
     }
     
+    func testGetWorkoutPlansByIndexWhenGetWorkoutplansFromApiNotCalled() {
+        XCTAssertNil(viewModel.workoutPlan(atIndex:1))
+    }
+    
+    func testGetWorkoutPlansCountWhenGetWorkoutplansFromApiNotCalled() {
+        XCTAssertEqual(viewModel.workoutPlansCount, 0)
+    }
+    
     func testGetworkoutPlanByIndex () {
+        viewModel.getWorkoutPlansFromApi()
         XCTAssertEqual(MockWorkoutManagerRepository().mockWorkoutManager.workoutPlans[1], viewModel.workoutPlan(atIndex: 1))
     }
     
     func testGetworkoutPlanByIndexFail () {
+        viewModel.getWorkoutPlansFromApi()
         XCTAssertNotEqual(MockWorkoutManagerRepository().mockWorkoutManager.workoutPlans[2], viewModel.workoutPlan(atIndex: 1))
     }
     
@@ -43,6 +53,7 @@ class LandingPageTests: XCTestCase {
     }
     
      func testGetWorkoutPlansPass() {
+         viewModel.getWorkoutPlansFromApi()
          XCTAssertNotNil(viewModel.getworkoutPlansData())
     }
     
@@ -53,6 +64,7 @@ class LandingPageTests: XCTestCase {
    }
     
     func testOpenWorkoutPlan() {
+        viewModel.getWorkoutPlansFromApi()
         viewModel.openWorkoutPlan(workoutPlanIndex: 1)
         XCTAssertTrue(mockdelegat.navigateToPageCalled)
     }
