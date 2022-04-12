@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0B6AE4B527C6783800186185"
+               BuildableName = "WorkoutManagerTests.xctest"
+               BlueprintName = "WorkoutManagerTests"
+               ReferencedContainer = "container:WorkoutManager.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0B6AE4BF27C6783800186185"
+               BuildableName = "WorkoutManagerUITests.xctest"
+               BlueprintName = "WorkoutManagerUITests"
+               ReferencedContainer = "container:WorkoutManager.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
