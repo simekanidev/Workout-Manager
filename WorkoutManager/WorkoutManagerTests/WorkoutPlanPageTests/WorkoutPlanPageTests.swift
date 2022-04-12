@@ -21,10 +21,54 @@ class WorkoutPlanPageTests: XCTestCase {
         viewModel = WorkoutPlansViewModel(delegate: mockdelegat, repository: mockrepository)
     }
     
+    func testSetWorkoutPlanPass() {
+        viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
+        XCTAssertNotNil(viewModel.getWorkoutPlan()) 
+    }
     
+    func testNumberOfDays() {
+        XCTAssertEqual(0, viewModel.numberOfDays)
+    }
     
+    func testNumberOfDaysSet() {
+        viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
+        viewModel.getWorkoutPlanDetails()
+        XCTAssertEqual(1, viewModel.numberOfDays)
+    }
     
-    class MockWorkoutPlanDelegate: WorkoutPlansDelegate{
+    func testSetWorkoutPlanNil() {
+        // viewModel.setWorkoutPlan(nil)
+        XCTAssertNil(viewModel.getWorkoutPlan())
+    }
+    
+    func testGetWorkoutInfoReturnsNil() {
+        viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
+                viewModel.getWorkoutPlanDetails()
+        viewModel = WorkoutPlansViewModel(delegate: mockdelegat, repository: MockWorkoutPlanRepositoryFailed())
+        XCTAssertNil(viewModel.getWorkoutInfo(itemIndex:0))
+    }
+    
+    func testGetWorkoutInfoPassed() {
+        viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
+                viewModel.getWorkoutPlanDetails()
+        viewModel.getWorkoutPlanDetails()
+        XCTAssertNotNil(viewModel.getWorkoutInfo(itemIndex:0))
+    }
+    
+    func testGetworkoutPlanDetailsFailure() {
+        viewModel = WorkoutPlansViewModel(delegate: mockdelegat, repository: MockWorkoutPlanRepositoryFailed())
+        viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
+        viewModel.getWorkoutPlanDetails()
+        XCTAssertTrue(self.mockdelegat.showErrorCalled)
+    }
+    
+    func testGetworkoutPlanDetailsFailureWorkoutPlanIdNotSet() {
+        viewModel.getWorkoutPlanDetails()
+        XCTAssertFalse(self.mockdelegat.showErrorCalled)
+        XCTAssertFalse(self.mockdelegat.reloadCalled)
+    }
+    
+    class MockWorkoutPlanDelegate: WorkoutPlansDelegate {
         
         var reloadCalled  = false
         var showErrorCalled = false

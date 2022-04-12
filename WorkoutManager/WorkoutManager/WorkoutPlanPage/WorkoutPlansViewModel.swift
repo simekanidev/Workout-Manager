@@ -16,8 +16,8 @@ class WorkoutPlansViewModel {
     private weak var delegate: WorkoutPlansDelegate?
     private var repository: WorkoutPlansRepositoryType?
     
-    var workoutPlan: WorkoutPlan?
-    var workoutPlanInfo: WorkoutPlanDetails?
+    private var workoutPlan: WorkoutPlan?
+    private var workoutPlanInfo: WorkoutPlanDetails?
     
     init(delegate:WorkoutPlansDelegate, repository: WorkoutPlansRepositoryType) {
         self.delegate = delegate
@@ -26,6 +26,10 @@ class WorkoutPlansViewModel {
     
     func setWorkoutPlan(workoutPlan:WorkoutPlan) {
         self.workoutPlan = workoutPlan
+    }
+    
+    func getWorkoutPlan() -> WorkoutPlan? {
+        return workoutPlan
     }
     
     public var numberOfDays: Int {

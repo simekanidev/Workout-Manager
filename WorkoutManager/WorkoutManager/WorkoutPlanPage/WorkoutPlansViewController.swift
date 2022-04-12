@@ -36,7 +36,7 @@ extension WorkoutPlansViewController {
     }
     
     private func populateData() {
-        descriptionText.text = viewModel.workoutPlan?.description
+        descriptionText.text = viewModel.getWorkoutPlan()?.description
     }
 }
 
