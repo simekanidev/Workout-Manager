@@ -10,9 +10,9 @@ import XCTest
 @testable import WorkoutManager
 class WorkoutPlanPageTests: XCTestCase {
     
-    var viewModel: WorkoutPlansViewModel!
-    var mockrepository: MockWorkoutPlanRepository!
-    var mockdelegat: MockWorkoutPlanDelegate!
+    private var viewModel: WorkoutPlansViewModel!
+    private var mockrepository: MockWorkoutPlanRepository!
+    private var mockdelegat: MockWorkoutPlanDelegate!
     
     override func setUp() {
         super.setUp()
@@ -23,7 +23,7 @@ class WorkoutPlanPageTests: XCTestCase {
     
     func testSetWorkoutPlanPass() {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
-        XCTAssertNotNil(viewModel.getWorkoutPlan()) 
+        XCTAssertNotNil(viewModel.getWorkoutPlan())
     }
     
     func testNumberOfDays() {
@@ -43,14 +43,14 @@ class WorkoutPlanPageTests: XCTestCase {
     
     func testGetWorkoutInfoReturnsNil() {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
-                viewModel.getWorkoutPlanDetails()
+        viewModel.getWorkoutPlanDetails()
         viewModel = WorkoutPlansViewModel(delegate: mockdelegat, repository: MockWorkoutPlanRepositoryFailed())
         XCTAssertNil(viewModel.getWorkoutInfo(itemIndex:0))
     }
     
     func testGetWorkoutInfoPassed() {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
-                viewModel.getWorkoutPlanDetails()
+        viewModel.getWorkoutPlanDetails()
         viewModel.getWorkoutPlanDetails()
         XCTAssertNotNil(viewModel.getWorkoutInfo(itemIndex:0))
     }
@@ -91,21 +91,12 @@ class WorkoutPlanPageTests: XCTestCase {
         func getWorkoutPlanById(id: Int, completion: @escaping (WorkoutPlanResult)) {
             completion(.success(mockWorkoutPlanDetails))
         }
-        let mockWorkoutPlanDetails = WorkoutPlanDetails(details:
-                                                            Details(id: 1,
-                                                                    name: "5 week program ",
-                                                                    description: "5 week program helps to make core strong"),
-                                                        days: [Day(details:
-                                                                    DayDetails(day: [1],
-                                                                               description: "Leg Day"),
-                                                                   exercises: [Exercise(data:
-                                                                                            [ExerciseData(exerciseDetails:ExerciseDetails(
-                                                                                                name: "Leg",
-                                                                                                description: "Pus",
-                                                                                                language: 1, sets: 5),
-                                                                                                          images: [ImageData(path: "/image-1", isThumbNail: false)],
-                                                                                                          repsData: [RepetitionsData(repetitionUnit:1, repetitions: 15)])],
-                                                                                        setData: SetData(sets: 1))])])
+        let mockWorkoutPlanDetails = WorkoutPlanDetails(details:Details(id: 1, name: "5 week program ",description: "5 week program helps to make core strong"), days:[Day(details:DayDetails(day: [1],
+                                        description: "Leg Day"),
+                                        exercises:[Exercise(data:[ExerciseData(exerciseDetails:ExerciseDetails(
+                                                                        name: "Leg",description: "Pus",language: 1, sets: 5),
+                                                                        images: [ImageData(path: "/image-1",isThumbNail: false)],
+                                                                        repsData: [RepetitionsData(repetitionUnit:1,repetitions: 15)])],setData: SetData(sets: 1))])])
         
     }
     
