@@ -11,7 +11,7 @@ class WorkoutPlanItem: UICollectionViewCell {
 
     @IBOutlet private var workoutsTableView:UITableView!
     @IBOutlet private weak var title: UILabel!
-    @IBOutlet weak var numberOfExersices: UILabel!
+    @IBOutlet private weak var numberOfExersices: UILabel!
     private var workoutDay: Day?
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,7 +11,7 @@ class WorkoutPlansViewController: UIViewController {
     
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
-    @IBOutlet weak var descriptionText: UILabel!
+    @IBOutlet private weak var descriptionText: UILabel!
     
     static var indentifier = "WorkoutPlansViewController"
     
@@ -42,11 +42,11 @@ extension WorkoutPlansViewController {
 
 extension WorkoutPlansViewController: WorkoutPlansDelegate {
     func showError(error: String) {
-        // will add code
+        
     }
     
     func navigateToPage(itemIndex: Int?) {
-        // will add code
+        
     }
     
     func setWorkoutPlan(workoutPlan: WorkoutPlan) {

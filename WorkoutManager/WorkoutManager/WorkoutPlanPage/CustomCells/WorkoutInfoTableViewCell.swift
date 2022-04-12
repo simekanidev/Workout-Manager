@@ -9,10 +9,10 @@ import UIKit
 
 class WorkoutInfoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var workoutImage: UIImageView!
-    @IBOutlet weak var exersiceName: UILabel!
-    @IBOutlet weak var numberOfReps: UILabel!
-    @IBOutlet weak var numberOfSets: UILabel!
+    @IBOutlet private weak var workoutImage: UIImageView!
+    @IBOutlet private weak var exersiceName: UILabel!
+    @IBOutlet private weak var numberOfReps: UILabel!
+    @IBOutlet private weak var numberOfSets: UILabel!
     private var exersise:Exercise?
     static var identifier = "WorkoutInfoTableViewCell"
     override func awakeFromNib() {
