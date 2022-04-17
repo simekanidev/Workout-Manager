@@ -12,7 +12,7 @@ class WorkoutPlanItem: UICollectionViewCell {
     @IBOutlet private var workoutsTableView:UITableView!
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var numberOfExersices: UILabel!
-    private var workoutDay: Day?
+    private var workoutDay: DayModel?
     override func awakeFromNib() {
         super.awakeFromNib()
         configureTableView()
@@ -24,7 +24,7 @@ class WorkoutPlanItem: UICollectionViewCell {
         return UINib(nibName: "WorkoutPlanItem", bundle: nil)
     }
     
-    public func setData(day: Day) {
+    public func setData(day: DayModel) {
         self.workoutDay = day
         numberOfExersices.text = String(day.exercises?.count ?? 0)
         title.text = day.details?.description ?? "Day"
@@ -42,10 +42,8 @@ extension WorkoutPlanItem: UITableViewDelegate, UITableViewDataSource {
         }
         cell.backgroundColor = .secondaryColour
         
-        guard let exercise = workoutDay?.exercises?[indexPath.item] else {
-            return cell
-        }
-        cell.setData(exercise:exercise)
+        guard let exercise = workoutDay?.exercises?[indexPath.item] else { return cell }
+        cell.setData(exercise: exercise)
         return cell
     }
     

@@ -45,14 +45,14 @@ class WorkoutPlanPageTests: XCTestCase {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
         viewModel.getWorkoutPlanDetails()
         viewModel = WorkoutPlansViewModel(delegate: mockdelegat, repository: MockWorkoutPlanRepositoryFailed())
-        XCTAssertNil(viewModel.getWorkoutInfo(itemIndex:0))
+        XCTAssertNil(viewModel.workoutInfo(itemIndex:0))
     }
     
     func testGetWorkoutInfoPassed() {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
         viewModel.getWorkoutPlanDetails()
         viewModel.getWorkoutPlanDetails()
-        XCTAssertNotNil(viewModel.getWorkoutInfo(itemIndex:0))
+        XCTAssertNotNil(viewModel.workoutInfo(itemIndex:0))
     }
     
     func testGetworkoutPlanDetailsFailure() {
@@ -91,9 +91,9 @@ class WorkoutPlanPageTests: XCTestCase {
         func getWorkoutPlanById(id: Int, completion: @escaping (WorkoutPlanResult)) {
             completion(.success(mockWorkoutPlanDetails))
         }
-        let mockWorkoutPlanDetails = WorkoutPlanDetails(details:Details(id: 1, name: "5 week program ",description: "5 week program helps to make core strong"), days:[Day(details:DayDetails(day: [1],
+        let mockWorkoutPlanDetails = WorkoutPlanDetailsModel(details:DetailsModel(id: 1, name: "5 week program ",description: "5 week program helps to make core strong"), days:[DayModel(details:DayDetailsModel(day: [1],
                                         description: "Leg Day"),
-                                        exercises:[Exercise(data:[ExerciseData(exerciseDetails:ExerciseDetails(
+                                        exercises:[ExerciseModel(data:[ExerciseData(exerciseDetails:ExerciseDetails(
                                                                         name: "Leg",description: "Pus",language: 1, sets: 5),
                                                                         images: [ImageData(path: "/image-1",isThumbNail: false)],
                                                                         repsData: [RepetitionsData(repetitionUnit:1,repetitions: 15)])],setData: SetData(sets: 1))])])

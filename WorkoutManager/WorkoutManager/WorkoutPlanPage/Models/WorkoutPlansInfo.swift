@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct WorkoutPlanDetails: Codable {
+struct WorkoutPlanDetailsModel: Codable {
 
-    var details: Details?
-    var days:[Day]?
+    var details: DetailsModel?
+    var days:[DayModel]?
     
     enum CodingKeys:String, CodingKey {
         case details = "obj"
@@ -18,15 +18,15 @@ struct WorkoutPlanDetails: Codable {
     }
 }
 
-struct Details: Codable {
+struct DetailsModel: Codable {
     var id: Int?
     var name: String?
     var description: String?
 }
 
-struct Day: Codable {
-    var details: DayDetails?
-    var exercises: [Exercise]?
+struct DayModel: Codable {
+    var details: DayDetailsModel?
+    var exercises: [ExerciseModel]?
 
     enum CodingKeys:String, CodingKey {
         case details = "obj"
@@ -34,12 +34,12 @@ struct Day: Codable {
     }
 }
 
-struct DayDetails: Codable {
+struct DayDetailsModel: Codable {
     var day: [Int?]?
     var description: String?
 }
 
-struct Exercise: Codable {
+struct ExerciseModel: Codable {
     var data: [ExerciseData]?
     var setData: SetData?
     enum CodingKeys:String, CodingKey {

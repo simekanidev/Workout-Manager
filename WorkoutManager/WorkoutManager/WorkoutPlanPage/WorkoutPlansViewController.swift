@@ -36,17 +36,17 @@ extension WorkoutPlansViewController {
     }
     
     private func populateData() {
-        descriptionText.text = viewModel.getWorkoutPlan()?.description
+        descriptionText.text = viewModel.workoutPlan?.description
     }
 }
 
 extension WorkoutPlansViewController: WorkoutPlansDelegate {
     func showError(error: String) {
-        
+        // TODO : Still need to add this functionality
     }
     
     func navigateToPage(itemIndex: Int?) {
-        
+        // TODO : Still need to add this functionality
     }
     
     func setWorkoutPlan(workoutPlan: WorkoutPlan) {
@@ -70,7 +70,7 @@ extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewD
             withReuseIdentifier: WorkoutPlanItem.identifier, for: indexPath) as? WorkoutPlanItem else {
             return UICollectionViewCell()
         }
-        guard let workoutDay = viewModel.getWorkoutInfo(itemIndex: indexPath.item) else {
+        guard let workoutDay = viewModel.workoutInfo(itemIndex: indexPath.item) else {
             return cell
         }
         cell.setData(day: workoutDay)
