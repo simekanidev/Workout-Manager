@@ -37,7 +37,6 @@ class WorkoutPlanPageTests: XCTestCase {
     }
     
     func testSetWorkoutPlanNil() {
-        // viewModel.setWorkoutPlan(nil)
         XCTAssertNil(viewModel.workoutPlanObject)
     }
     
