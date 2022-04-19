@@ -23,7 +23,7 @@ class WorkoutPlanPageTests: XCTestCase {
     
     func testSetWorkoutPlanPass() {
         viewModel.setWorkoutPlan(workoutPlan: WorkoutPlan(id: 1, name: "", description: ""))
-        XCTAssertNotNil(viewModel.getWorkoutPlan())
+        XCTAssertNotNil(viewModel.workoutPlanObject)
     }
     
     func testNumberOfDays() {
@@ -38,7 +38,7 @@ class WorkoutPlanPageTests: XCTestCase {
     
     func testSetWorkoutPlanNil() {
         // viewModel.setWorkoutPlan(nil)
-        XCTAssertNil(viewModel.getWorkoutPlan())
+        XCTAssertNil(viewModel.workoutPlanObject)
     }
     
     func testGetWorkoutInfoReturnsNil() {
