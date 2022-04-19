@@ -27,7 +27,7 @@ class WorkoutPlansViewModel {
         self.workoutPlan = workoutPlan
     }
     
-    var workoutPlan : WorkoutPlan? {
+    var workoutPlanObject : WorkoutPlan? {
         return workoutPlan
     }
     
