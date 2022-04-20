@@ -9,8 +9,14 @@ import UIKit
 
 class WorkoutInfoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var workoutImage: UIImageView!
+    @IBOutlet private weak var workoutImage: UIImageView!
+    @IBOutlet private weak var exersiceName: UILabel!
+    @IBOutlet private weak var numberOfReps: UILabel!
+    @IBOutlet private weak var numberOfSets: UILabel!
+    
+    private var exersise:ExerciseModel?
     static var identifier = "WorkoutInfoTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         workoutImage.layer.cornerRadius = 15
@@ -22,5 +28,12 @@ class WorkoutInfoTableViewCell: UITableViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    public func setData(exercise: ExerciseModel) {
+        self.exersise = exercise
+        self.exersiceName.text = exercise.data?[0].exerciseDetails?.name
+        self.numberOfReps.text = String(exercise.data?[0].repsData?[0].repetitions ?? 10)
+        self.numberOfSets.text = String(exercise.setData?.sets ?? 0)
     }
 }

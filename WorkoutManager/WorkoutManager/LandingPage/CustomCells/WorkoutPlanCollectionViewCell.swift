@@ -11,6 +11,7 @@ class WorkoutPlanCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var statusLabel: UILabel!
+    
     static let identifier = "WorkoutPlanCollectionViewCell"
     
     func setCellProperties(workoutplan: WorkoutPlan) {
