@@ -17,7 +17,7 @@ struct WorkoutManager: Codable, Hashable {
 
 struct WorkoutPlan: Codable, Hashable {
     
-    let id: Int
-    let name: String
-    let description: String
+    var id: Int?
+    var name: String?
+    var description: String?
 }

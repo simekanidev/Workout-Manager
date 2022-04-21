@@ -11,8 +11,22 @@ class WorkoutPlansViewController: UIViewController {
     
     @IBOutlet private weak var workoutPlanInfo: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var descriptionText: UILabel!
     
     static var indentifier = "WorkoutPlansViewController"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureCollectionView()
+        populateData()
+        viewModel.getWorkoutPlanDetails()
+    }
+    
+    private lazy var viewModel = WorkoutPlansViewModel(delegate: self, repository: WorkoutPlansRepository())
+    private var currentPage = 0
+}
+
+extension WorkoutPlansViewController {
     fileprivate func configureCollectionView() {
         workoutPlanInfo.delegate = self
         workoutPlanInfo.dataSource = self
@@ -21,17 +35,34 @@ class WorkoutPlansViewController: UIViewController {
         workoutPlanInfo.layer.cornerRadius = CGFloat(15)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureCollectionView()
+    private func populateData() {
+        descriptionText.text = viewModel.workoutPlanObject?.description
+    }
+}
+
+extension WorkoutPlansViewController: WorkoutPlansDelegate {
+    func showError(error: String) {
+        // TODO : Still need to add this functionality
     }
     
-    private var currentPage = 0
+    func navigateToPage(itemIndex: Int?) {
+        // TODO : Still need to add this functionality
+    }
+    
+    func setWorkoutPlan(workoutPlan: WorkoutPlan) {
+        viewModel.setWorkoutPlan(workoutPlan: workoutPlan)
+    }
+    
+    func reloadCollectionView() {
+        self.workoutPlanInfo.reloadData()
+        
+    }
 }
 
 extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.numberOfDays
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,6 +70,10 @@ extension WorkoutPlansViewController:UICollectionViewDelegate, UICollectionViewD
             withReuseIdentifier: WorkoutPlanItem.identifier, for: indexPath) as? WorkoutPlanItem else {
             return UICollectionViewCell()
         }
+        guard let workoutDay = viewModel.workoutInfo(itemIndex: indexPath.item) else {
+            return cell
+        }
+        cell.setData(day: workoutDay)
         return cell
     }
     

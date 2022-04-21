@@ -14,7 +14,7 @@ protocol ViewModelDelegate:AnyObject {
 
 class LoginViewModel {
     private weak var delegate: ViewModelDelegate?
-    
+
     init(delegate:ViewModelDelegate) {
         self.delegate = delegate
     }
@@ -25,6 +25,6 @@ class LoginViewModel {
     }
     
     private func checkLoginDetails(username:String, password:String) -> Bool {
-        return username != "Admin" && password != "TestPass123"
+        return username == "Admin" && password == "TestPass123"
     }
 }
